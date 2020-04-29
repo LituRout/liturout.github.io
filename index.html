@@ -229,25 +229,40 @@
             </td>
           </tr>
           <!--==========================================================================================-->
-                    <tr>
-                      <td style="padding:20px;width:25%;vertical-align:middle">
-                        <img src='images/waef.png'>
-                      </td>
-                      <td style="padding:20px;width:75%;vertical-align:middle">
-                        <a href="http://openaccess.thecvf.com/content_eccv_2018_workshops/w1/html/Rout_WAEF_Weighted_Aggregation_with_Enhancement_Filter_for_Visual_Object_Tracking_ECCVW_2018_paper.html">
-                          <papertitle>WAEF: Weighted Aggregation with Enhancement Filter for Visual Object Tracking</papertitle>
-                        </a>
-                        <br>
-                        <strong>Litu Rout</strong>, Deepak Mishra and Rama Krishna Gorthi
-                        <br>
-                        <em>ECCV Workshop</em>, 2018
-                        <br>
-                        <a href="http://openaccess.thecvf.com/content_eccv_2018_workshops/w1/html/Rout_WAEF_Weighted_Aggregation_with_Enhancement_Filter_for_Visual_Object_Tracking_ECCVW_2018_paper.html">PDF</a>
-                        <p></p>
-                        <p>This paper discusses a novel approach to regress in temporal domain, based on weighted aggregation of distinctive visual features and feature prioritization with entropy estimation in a recursive fashion.</p>
-                      </td>
-                    </tr>
+          <tr onmouseout="waef_stop()" onmouseover="waef_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='sing_image'><video width=100% height=100% muted autoplay loop>
+                <source src="images/waef_crop.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='images/waef.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function waef_start() {
+                  document.getElementById('sing_image').style.opacity = "1";
+                }
 
+                function waef_stop() {
+                  document.getElementById('sing_image').style.opacity = "0";
+                }
+                waef_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="http://openaccess.thecvf.com/content_eccv_2018_workshops/w1/html/Rout_WAEF_Weighted_Aggregation_with_Enhancement_Filter_for_Visual_Object_Tracking_ECCVW_2018_paper.html">
+                <papertitle>WAEF: Weighted Aggregation with Enhancement Filter for Visual Object Tracking</papertitle>
+              </a>
+              <br>
+              <strong>Litu Rout</strong>, Deepak Mishra and Rama Krishna Gorthi
+              <br>
+              <em>ECCV Workshop</em>, 2018
+              <br>
+              <a href="http://openaccess.thecvf.com/content_eccv_2018_workshops/w1/html/Rout_WAEF_Weighted_Aggregation_with_Enhancement_Filter_for_Visual_Object_Tracking_ECCVW_2018_paper.html">PDF</a>
+              <p></p>
+              <p>This paper discusses a novel approach to regress in temporal domain, based on weighted aggregation of distinctive visual features and feature prioritization with entropy estimation in a recursive fashion.</p>
+            </td>
+          </tr>
          <!--==========================================================================================-->
               <tr>
                 <td style="padding:20px;width:25%;vertical-align:middle">

@@ -12,6 +12,9 @@
     opacity: 0.5;
   }
   </style>
+  <style>
+  #more {display: none;}
+  </style>
 </head>
 
 <body>
@@ -58,24 +61,49 @@
       <!--========================================================================================== -->
           <td>
             <ul>
-              <li> <b>Apr 2021:</b> Published a paper on <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032063321000544"> Phobos image enhancement </a> at <a href = "https://www.sciencedirect.com/journal/planetary-and-space-science"> Planetary and Space Science Journal </a>!!</li>
+              <li> <b>Oct 2021:</b> New preprint on <a href="https://arxiv.org/pdf/2110.02999.pdf">Generative Modeling with Optimal Transport Maps</a>!!!</li>
               <p></p>
-              <li> <b>Feb 2021:</b> Presented a paper on <a href="https://arxiv.org/abs/2010.00521"> Turing Instability in Adversarial Learning </a> at <a href = "https://aaai.org/Conferences/AAAI-21/"> AAAI 2021 </a>!!</li>
+              <li> <b>Apr 2021:</b> Published a paper on <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032063321000544"> Phobos image enhancement </a> at <a href = "https://www.sciencedirect.com/journal/planetary-and-space-science"> Planetary and Space Science Journal</a>.</li>
+              <p></p>
+              <li> <b>Feb 2021:</b> Presented a paper on <a href="https://arxiv.org/abs/2010.00521"> Turing Instability in Adversarial Learning </a> at <a href = "https://aaai.org/Conferences/AAAI-21/"> AAAI 2021 </a>.</li>
               <p></p> 
               <li> <b>Dec 2020:</b> Presented a <a href=""> paper </a> at the <a href = "https://neurips.cc/"> NeurIPS </a> workshop on <a href="https://ml4physicalsciences.github.io/2020/" >Machine Learning and Physical Sciences</a>.</li>
               <p></p> 
               <li> <b>September 2020:</b> Received a <b>patent</b> for <a href="data/patent_certificate.pdf">A Method for Sequential Information Condensation using Fourier Basis</a>.</li>
               <p></p>
+              <span id="dots"></span><span id="more">
               <li> <b>June 2020:</b> Presented <b>two papers</b> at the <a href="http://cvpr2020.thecvf.com/">CVPR</a> workshop on <a href="https://www.grss-ieee.org/earthvision2020/">Large Scale Computer Vision for Remote Sensing Imagery</a>.</li>
               <!-- <li> <b>April 2020:</b> <b>Two papers</b> got accepted at <a href="http://cvpr2020.thecvf.com/">CVPR</a> Workshop on <a href="https://www.grss-ieee.org/earthvision2020/">Large Scale Computer Vision for Remote Sensing Imagery</a>!</li> -->
               <p></p>
               <li> <b>January 2020:</b> Published <a href="https://ieeexplore.ieee.org/document/8961195">ALERT</a> in the <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=36">IEEE Transactions on Geoscience and Remote Sensing</a>, <b>impact factor: 5.85</b>.</li>
               <p></p>
               <li> <b>December 2018:</b> Received the <a href="https://www.inae.in/innovative-student-projects-award/">Innovative Student Project Award</a> for excellence in engineering and technology.
+              </span>
             </ul>
+            <button onclick="myFunction()" id="myBtn">More</button>
             <p></p>
           </td>
-        </tbody></table>
+        </tbody>
+      </table>
+
+        <script>
+        function myFunction() {
+          var dots = document.getElementById("dots");
+          var moreText = document.getElementById("more");
+          var btnText = document.getElementById("myBtn");
+
+          if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "More"; 
+            moreText.style.display = "none";
+          } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Less"; 
+            moreText.style.display = "inline";
+          }
+        }
+        </script>
+
 
 
 <!-- Research========================================================================================== -->
@@ -119,13 +147,13 @@
               <img src='images/otm.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <mark style="color:red"><b>NEW</b></mark> &nbsp <a href=""><papertitle>Generative Modeling with Optimal Transport Maps</papertitle></a>
+              <mark style="color:red"><b>NEW</b></mark> &nbsp <a href="https://arxiv.org/pdf/2110.02999.pdf"><papertitle>Generative Modeling with Optimal Transport Maps</papertitle></a>
               <br>
               <strong>Litu Rout</strong>, Alexander Korotin, and Evgeny Burnaev
               <br>
               <em>Under Review</em>, 2021
               <br>
-              <a href="data/preprint1_2021.pdf">Preprint</a> <!-- &nbsp <a href="https://arxiv.org/abs/2010.00522">ArXiv</a> -->
+              <a href="data/preprint1_2021.pdf">PDF</a> &nbsp <a href="https://arxiv.org/pdf/2110.02999.pdf">ArXiv</a>
               <p></p>
               <p>While Optimal Transport (OT) cost serves as the loss for popular generative models, we demonstrate that the OT map can be used as the generative model itself. Previous analogous approaches consider OT maps as generative models only in the latent spaces due to their poor performance in the original high-dimensional ambient space. In contrast, we apply OT maps directly in the ambient space, e.g., a space of high-dimensional images. </p>
             </td>

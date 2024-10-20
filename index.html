@@ -66,7 +66,9 @@
       <!--========================================================================================== -->
           <td>
             <ul>     
-              <li><b>Oct 2024:</b> Preprint: <a href="https://arxiv.org/pdf/2405.17401">Semantic Image Inversion and Editing using Stochastic Rectified Differential Equations!</a></li>
+              <li><b>Oct 2024:</b> Preprint: <a href="https://arxiv.org/pdf/2410.12652">Constrained Posterior Sampling: Time Series Generation with Hard Constraints!</a></li>
+              <p></p>
+              <li><b>Oct 2024:</b> Preprint: <a href="https://arxiv.org/pdf/2410.10792">Semantic Image Inversion and Editing using Stochastic Rectified Differential Equations!</a></li>
               <p></p>         
               <li><b>Sep 2024: </b> Hugging Face Demo: <a href="https://huggingface.co/spaces/fffiloni/RB-Modulation">RB-Modulation for Stylization and Content-Style Composition!</a></li>              
               <p></p>
@@ -80,9 +82,9 @@
               <!-- <p></p>
 	      <li><b>May 2023: </b> Excited to start summer internship in <a href="https://www.qualcomm.com/research/artificial-intelligence/ai-research">Qualcomm AI Research</a>, San Diego, CA!</li> -->
               <p></p>
-              <!-- <span id="dots"></span><span id="more">                                    -->
-              <li><b>Feb 2023: </b> One paper <a href="https://arxiv.org/pdf/2302.06570.pdf">Beyond Uniform Smoothness: A Stopped Analysis of Adaptive SGD</a> accepted at COLT 2023.</li>
               <span id="dots"></span><span id="more">                                   
+              <li><b>Feb 2023: </b> One paper <a href="https://arxiv.org/pdf/2302.06570.pdf">Beyond Uniform Smoothness: A Stopped Analysis of Adaptive SGD</a> accepted at COLT 2023.</li>
+              <!-- <span id="dots"></span><span id="more">                                    -->
               <p></p>            
               <li><b>Feb 2023: </b> New preprint: <a href="https://arxiv.org/pdf/2302.01217.pdf">A Theoretical Justification for Image Inpainting using Diffusion Models</a>.</li>
               <p></p>           
@@ -181,6 +183,33 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src='images/cps.png'>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <mark style="color:red"><b>NEW</b></mark> &nbsp <a href="https://arxiv.org/pdf/2410.12652"><papertitle>Constrained Posterior Sampling: Time Series Generation with Hard Constraints</papertitle></a>
+              <br>
+              Sai Shankar Narasimhan, Shubhankar Agarwal, <strong>Litu Rout</strong>, Sanjay Shakkottai, Sandeep Chinchali              
+              <br>
+              <em>Preprint</em>, 2024
+              <br> 
+              <!-- <a href="">OpenReview</a> &nbsp -->
+              <!-- <a href="https://rf-inversion.github.io/">Project Page</a> -->
+              <!-- &nbsp  -->
+              <a href="data/cps.pdf">PDF</a> 
+              &nbsp
+              <a href="https://arxiv.org/pdf/2410.12652">ArXiv</a>
+              <!-- &nbsp -->
+              <!-- <a href="https://www.youtube.com/watch?v=OrIzxIzwams">Talk</a> -->
+              <!-- &nbsp -->
+              <!-- <a href="https://github.com/LituRout/RF-Inversion">Code</a>
+              &nbsp
+              <a href="https://github.com/logtd/ComfyUI-Fluxtapoz">ComfyUI</a> -->
+              <p></p>
+              <p> We present Constrained Posterior Sampling (CPS), a scalable diffusion sampling process that generates realistic time series samples that belong to a constraint set. Without any additional training, CPS can handle a large number of constraints without sacrificing sample quality. We provide a detailed theoretical analysis of the effect of modifying the traditional diffusion sampling process with CPS.</p>
+            </td>
+         </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/rf-inversion.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
@@ -203,7 +232,7 @@
               &nbsp
               <a href="https://github.com/logtd/ComfyUI-Fluxtapoz">ComfyUI</a>
               <p></p>
-              <p>We present an efficient inversion method for RF models, including Flux, that requires no additional training, latent optimization, prompt tuning, or complex attention processors. We develop a new vector field for RF inversion, interpolating between two competing objectives: consistency with a possibly corrupted input image, and consistency with the “true” distribution of clean images (§3.3). We prove that this vector field is equivalent to a rectified SDE that interpolates between the stochastic equivalents of these competing objectives (§3.4). We extend the theoretical results to design a stochastic sampler for Flux.</p>
+              <p>We present an efficient inversion method for RF models, including Flux, that requires no additional training, latent optimization, prompt tuning, or complex attention processors. We develop a new vector field for RF inversion, interpolating between two competing objectives: consistency with a possibly corrupted input image, and consistency with the “true” distribution of clean images.</p>
             </td>
          </tr>
           <tr>
@@ -238,7 +267,8 @@
               <img src='images/stsl.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <mark style="color:red"><b>NEW</b></mark> &nbsp <a href="https://stsl-inverse-edit.github.io/assets/stsl-inverse-edit-preprint.pdf"><papertitle>Beyond First-order Tweedie: Solving Inverse Problems using Latent Diffusion</papertitle></a>
+              <!-- <mark style="color:red"><b>NEW</b></mark> &nbsp  -->
+              <a href="https://stsl-inverse-edit.github.io/assets/stsl-inverse-edit-preprint.pdf"><papertitle>Beyond First-order Tweedie: Solving Inverse Problems using Latent Diffusion</papertitle></a>
               <br>
               <strong>Litu Rout</strong>, Yujia Chen, Abhishek Kumar, Constantine Caramanis, Sanjay Shakkottai, and Wen-Sheng Chu
               <br>

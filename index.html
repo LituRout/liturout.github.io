@@ -66,10 +66,10 @@
       <!--========================================================================================== -->
           <td>
             <ul>     
-              <!-- <li><b>Oct 2024:</b> Preprint: <a href="https://arxiv.org/pdf/2410.12652">Constrained Posterior Sampling: Time Series Generation with Hard Constraints!</a></li>
-              <p></p> -->
-              <li><b>Oct 2024:</b> Preprint: <a href="https://arxiv.org/pdf/2410.10792">Semantic Image Inversion and Editing using Stochastic Rectified Differential Equations!</a></li>
-              <p></p>         
+              <li><b>Oct 2024:</b> Preprint: <a href="https://arxiv.org/pdf/2410.10792">Semantic Image Inversion and Editing using Rectified Stochastic Differential Equations!</a></li>
+              <p></p>
+              <li><b>Oct 2024:</b> Preprint: <a href="https://arxiv.org/pdf/2410.12652">Constrained Posterior Sampling: Time Series Generation with Hard Constraints!</a></li>
+              <p></p>                    
               <li><b>Sep 2024: </b> Hugging Face Demo: <a href="https://huggingface.co/spaces/fffiloni/RB-Modulation">RB-Modulation for Stylization and Content-Style Composition!</a></li>              
               <p></p>
               <li><b>May 2024: </b> Preprint: <a href="https://arxiv.org/pdf/2405.17401">RB-Modulation: Training-Free Personalization of Diffusion Models using Stochastic Optimal Control!</a></li>
@@ -166,7 +166,7 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Publications</heading>
+              <heading>Research Publications</heading>
             </td>
           </tr>
         </tbody></table>
@@ -181,24 +181,6 @@
         </tbody></table>
         
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <!-- <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/cps.png'>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <mark style="color:red"><b>NEW</b></mark> &nbsp <a href="https://arxiv.org/pdf/2410.12652"><papertitle>Constrained Posterior Sampling: Time Series Generation with Hard Constraints</papertitle></a>
-              <br>
-              Sai Shankar Narasimhan, Shubhankar Agarwal, <strong>Litu Rout</strong>, Sanjay Shakkottai, Sandeep Chinchali              
-              <br>
-              <em>Preprint</em>, 2024
-              <br>               
-              <a href="data/cps.pdf">PDF</a> 
-              &nbsp
-              <a href="https://arxiv.org/pdf/2410.12652">ArXiv</a>              
-              <p></p>
-              <p> We present Constrained Posterior Sampling (CPS), a scalable diffusion sampling process that generates realistic time series samples that belong to a constraint set. Without any additional training, CPS can handle a large number of constraints without sacrificing sample quality. We provide a detailed theoretical analysis of the effect of modifying the traditional diffusion sampling process with CPS.</p>
-            </td>
-         </tr> -->
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/rf-inversion.png'>
@@ -222,10 +204,30 @@
               <a href="https://github.com/LituRout/RF-Inversion">Code</a>
               &nbsp
               <a href="https://github.com/logtd/ComfyUI-Fluxtapoz">ComfyUI</a>
+              &nbsp
+              <a href="https://x.com/natanielruizg/status/1846248914024124803">Tweet</a>
               <p></p>
               <p>We present an efficient inversion method for RF models, including Flux, that requires no additional training, latent optimization, prompt tuning, or complex attention processors. We develop a new vector field for RF inversion, interpolating between two competing objectives: consistency with a possibly corrupted input image, and consistency with the “true” distribution of clean images.</p>
             </td>
-         </tr>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src='images/cps.png'>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <mark style="color:red"><b>NEW</b></mark> &nbsp <a href="https://arxiv.org/pdf/2410.12652"><papertitle>Constrained Posterior Sampling: Time Series Generation with Hard Constraints</papertitle></a>
+              <br>
+              Sai Shankar Narasimhan, Shubhankar Agarwal, <strong>Litu Rout</strong>, Sanjay Shakkottai, Sandeep Chinchali              
+              <br>
+              <em>Preprint</em>, 2024
+              <br>               
+              <a href="data/cps.pdf">PDF</a> 
+              &nbsp
+              <a href="https://arxiv.org/pdf/2410.12652">ArXiv</a>              
+              <p></p>
+              <p> We present Constrained Posterior Sampling (CPS), a scalable diffusion sampling process that generates realistic time series samples that belong to a constraint set. Without any additional training, CPS can handle a large number of constraints without sacrificing sample quality. We provide a detailed theoretical analysis of the effect of modifying the traditional diffusion sampling process with CPS.</p>
+            </td>
+          </tr>         
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/rb-modulation.png'>
@@ -249,10 +251,12 @@
               <a href="https://github.com/LituRout/RB-Modulation">Code</a>
               &nbsp
               <a href="https://huggingface.co/spaces/fffiloni/RB-Modulation">Demo</a>
+              &nbsp
+              <a href="https://x.com/fffiloni/status/1830719360656167096">Tweet</a>
               <p></p>
               <p>We introduce Reference-Based Modulation (RB-Modulation), a training-free plug-and-play solution for content and style personalization. By incorporating style features into the controller’s terminal cost, we modulate the drift field in diffusion models’ reverse dynamics, enabling training-free personalization. Further, we propose an Attention Feature Aggregation (AFA) module that decouples content from the reference style image. </p>
             </td>
-         </tr>
+          </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/stsl.png'>
@@ -275,6 +279,8 @@
               <a href="https://www.youtube.com/watch?v=OrIzxIzwams">Talk</a>
               &nbsp
               <a href="https://github.com/LituRout/stsl-inverse-edit">Code</a>
+              &nbsp
+              <a href="https://x.com/litu_rout_/status/1732032178710548654">Tweet</a>
               <p></p>
               <p>We present an efficient second-order approximation using Tweedie's formula to mitigate the bias incurred in the widely used first-order samplers. With this method, we devise a surrogate loss function to refine the reverse process at every diffusion step to address inverse problems and perform high-fidelity text-guided image editing. </p>
             </td>
@@ -297,7 +303,8 @@
             <a href="https://arxiv.org/pdf/2307.00619.pdf">ArXiv</a> &nbsp
             <a href="https://github.com/LituRout/PSLD">Code</a> &nbsp 
             <a href="https://huggingface.co/spaces/PSLD/PSLD">Demo</a>&nbsp
-            <a href="https://neurips.cc/virtual/2023/poster/71366">Presentation</a> 
+            <a href="https://neurips.cc/virtual/2023/poster/71366">Presentation</a>&nbsp
+            <a href="https://x.com/giannis_daras/status/1678903720317186051">Tweet</a> 
             <p></p>
             <p> Solving inverse problems (e.g. inpainting/deblurring) for general domain images is hard. Magic Eraser and other commercial tools use separately trained models for each task. We introduce PSLD, a method that uses Stable Diffusion to solve all linear problems without any extra training.</p>
           </td>

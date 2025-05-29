@@ -66,6 +66,8 @@
       <!--========================================================================================== -->
           <td>
             <ul>
+              <li><b>May 2025: </b> New Preprint: <a href="https://arxiv.org/pdf/2505.18456">Anchored Diffusion Language Model</a> appeared on ArXiv!</li>
+              <p></p>                                         
               <li><b>Feb 2025: </b> <a href="https://openreview.net/pdf?id=bnINPG5A32">RB-Modulation</a> selected as an <b>Oral (1.8% acceptance ratio)</b> presentation at ICLR 2025!</li>
               <p></p>                                         
               <li><b>Jan 2025: </b> Three papers: <a href="https://openreview.net/pdf?id=bnINPG5A32">RB-Modulation</a>, <a href="https://openreview.net/pdf?id=Hu0FSOSEyS">RF-Inversion</a> and <a href="https://openreview.net/pdf?id=9QPH1YQCMn">InfillingScore</a> accepted at ICLR 2025!</li>
@@ -78,9 +80,9 @@
               <p></p>
               <li><b>May 2024: </b> Preprint: <a href="https://arxiv.org/pdf/2405.17401">RB-Modulation: Training-Free Personalization of Diffusion Models using Stochastic Optimal Control!</a></li>
               <p></p>
+              <span id="dots"></span><span id="more">
               <li><b>Feb 2024: </b> One paper <a href="https://stsl-inverse-edit.github.io/assets/stsl-inverse-edit-preprint.pdf">Beyond First-order Tweedie: Solving Inverse Problems using Latent Diffusion</a> accepted at CVPR 2024!</li>
-              <p></p>
-              <span id="dots"></span><span id="more">                                   
+              <p></p>              
 	            <li><b>Nov 2023: </b> New preprint: <a href="https://stsl-inverse-edit.github.io/assets/stsl-inverse-edit-preprint.pdf">Beyond First-order Tweedie: Solving Inverse Problems using Latent Diffusion!</a></li>
               <p></p>              
               <li><b>Sep 2023: </b> One paper <a href="https://arxiv.org/pdf/2307.00619.pdf">Solving Linear Inverse Problems Provably using PSLD</a> accepted at NeurIPS 2023!</li>
@@ -179,12 +181,35 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Sampling & Optimization</heading>
+              <heading>Diffusion Models & Flows</heading>
             </td>
           </tr>
         </tbody></table>
         
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src='images/adlm.png'>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <mark style="color:red"><b>NEW</b></mark> &nbsp 
+              <a href="https://anchored-diffusion-llm.github.io/data/adlm.pdf"><papertitle>Anchored Diffusion Language Model</papertitle></a>
+              <br>
+              <strong>Litu Rout</strong>, Constantine Caramanis, and Sanjay Shakkottai
+              <br>
+              <em>ArXiv</em>, 2025
+              <br> 
+              <!-- <a href="https://openreview.net/forum?id=Hu0FSOSEyS">OpenReview</a> &nbsp -->
+              <a href="https://anchored-diffusion-llm.github.io/">Project Page</a> &nbsp 
+              <a href="anchored-diffusion-llm.github.io/data/adlm.pdf">PDF</a> &nbsp
+              <a href="https://arxiv.org/pdf/2505.18456">ArXiv</a> &nbsp
+              <a href="https://github.com/LituRout/ADLM">Code</a>
+              <!-- <a href="https://x.com/natanielruizg/status/1846248914024124803">Tweet</a> -->
+              <p></p>
+              <p>Diffusion Language Models (DLMs) promise parallel generation and bidirectional context, yet they underperform autoregressive (AR) models in both likelihood modeling and generated text quality. We address this issue by introducing Anchored Diffusion Language Model (ADLM), a novel two-stage framework that first predicts distributions over important tokens via an anchor network, and then predicts the likelihoods of missing tokens conditioned on the anchored predictions.
+              </p>
+            </td>
+          </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/rf-inversion.png'>
@@ -217,7 +242,8 @@
               <img src='images/rb-modulation.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <mark style="color:red"><b>NEW (Oral)</b></mark> &nbsp <a href="https://rb-modulation.github.io/data/main.pdf"><papertitle>RB-Modulation: Training-Free Stylization using Reference-Based Modulation</papertitle></a>
+              <mark style="color:red"><b>NEW (Oral)</b></mark> &nbsp 
+              <a href="https://rb-modulation.github.io/data/main.pdf"><papertitle>RB-Modulation: Training-Free Stylization using Reference-Based Modulation</papertitle></a>
               <br>
               <strong>Litu Rout</strong>, Yujia Chen, Nataniel Ruiz, Abhishek Kumar, Constantine Caramanis, Sanjay Shakkottai, and Wen-Sheng Chu
               <br>
@@ -248,7 +274,8 @@
               <img src='images/InfillingScore.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <mark style="color:red"><b>NEW</b></mark> &nbsp <a href="https://rb-modulation.github.io/data/main.pdf"><papertitle>Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models</papertitle></a>
+              <!-- <mark style="color:red"><b>NEW</b></mark> &nbsp  -->
+              <a href="https://openreview.net/pdf?id=9QPH1YQCMn"><papertitle>Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models</papertitle></a>
               <br>
               Negin Raoof, <strong>Litu Rout</strong>, Giannis Daras, Sujay Sanghavi, Constantine Caramanis, Sanjay Shakkottai, and Alex Dimakis
               <br>

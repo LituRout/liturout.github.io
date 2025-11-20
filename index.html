@@ -1,355 +1,467 @@
 <!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Litu Rout</title>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Litu Rout - UT Austin</title>
 
   <meta name="author" content="Litu Rout">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/jpg" href="images/UT_profile.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
   <style>
-  div {
-    opacity: 0.5;
-  }
-  </style>
-  <style>
-  #more {display: none;}
+    /* --- GLOBAL STYLES --- */
+    body {
+      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+      padding-top: 60px;
+      /* Space for fixed navbar */
+      background-color: #fff;
+      color: #333;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #0056b3;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #003d82;
+      text-decoration: underline;
+    }
+
+    /* --- NAVIGATION BAR --- */
+    .navbar {
+      background-color: #ffffff;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      border-bottom: 1px solid #eaeaea;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    }
+
+    .navbar a {
+      display: block;
+      color: #444;
+      text-align: center;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .navbar a:hover {
+      color: #0056b3;
+      background-color: #f9f9f9;
+    }
+
+    /* --- LAYOUT --- */
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* --- TYPOGRAPHY --- */
+    heading {
+      font-size: 22px;
+      font-weight: 700;
+      color: #222;
+      display: block;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    h3.section-sub {
+      margin: 40px 0 15px 0;
+      font-size: 1.3em;
+      color: #444;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    name {
+      font-size: 2.5em;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    papertitle {
+      font-weight: 700;
+      font-size: 1.1em;
+      color: #222;
+    }
+
+    /* --- PROFILE & SOCIAL --- */
+    .profile-photo {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.02);
+    }
+
+    .social-links a {
+      font-size: 22px;
+      margin: 0 12px;
+      color: #555;
+      transition: all 0.2s;
+    }
+
+    .social-links a:hover {
+      color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    /* --- PUBLICATION TABLE IMAGES & VIDEOS --- */
+    .pub-table td img,
+    .pub-table td video {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+      display: block;
+    }
+
+    /* --- FIX FOR GITHUB STARS BADGE --- */
+    .pub-table td img.github-badge {
+      width: auto !important;
+      height: 20px !important;
+      display: inline-block;
+      box-shadow: none;
+      border-radius: 0;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+
+    /* Add subtle hover effect to rows */
+    .pub-table tr:hover td {
+      background-color: #fafafa;
+    }
+
+    /* --- UTILITIES --- */
+    #more {
+      display: none;
+    }
+
+    .new-badge {
+      color: #d32f2f;
+      font-weight: bold;
+      font-size: 0.9em;
+      background: #ffebee;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* Footer credits */
+    .footer {
+      text-align: center;
+      padding: 40px 0;
+      font-size: 0.9em;
+      color: #aaa;
+      border-top: 1px solid #eee;
+      margin-top: 40px;
+    }
   </style>
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Litu Rout</name>
-              </p>
-              <p> I am a fourth year PhD student at <a href="https://www.utexas.edu/">The University of Texas Austin</a>, advised by <a href="https://caramanis.github.io/"> Prof. Constantine Caramanis </a> and <a href="https://sites.google.com/view/sanjay-shakkottai/home"> Prof. Sanjay Shakkottai</a>. My research focuses on the <strong>theoretical foundations of generative models</strong> (e.g. diffusion, flows, and optimal transport) and their <strong>applications in conditional sampling</strong> (e.g. inverse problems, image/video editing, and personalization).
-              I am currently working as a student researcher at Google.
-              </p>              
-              <p>Prior to UT Austin, I worked as a Scientist/Engineer-SD at the<!--  Space Applications Centre <a href="https://www.sac.gov.in/Vyom/index.jsp">(SAC)</a>, --> <a href="https://www.isro.gov.in/"> Indian Space Research Organisation</a>, where I developed operational deep learning algorithms and analyzed their convergence properties. 
-              </p>
-              <p>
-              I received my BTech from the Indian Institute of Space Science and Technology <a href="https://www.iist.ac.in/">(IIST)</a>. I was fortunate to be advised by <a href="https://sites.google.com/view/ramakrishnasaigorthi/Home"> Prof. Rama Krishna Gorthi</a> and <a href="https://www.iist.ac.in/avionics/deepak.mishra"> Prof. Deepak Mishra</a> during my undergraduate research.  My bachelor's <a href="data/BTech_Thesis.pdf"> thesis</a> received the <a href="https://www.inae.in/recipients-of-innovative-student-projects-award/">Innovative Student Project Award</a> offered by the Indian National Academy of Engineering <a href="https://www.inae.in/">(INAE).</a>
-              </p>
-              <p style="text-align:center">
-                <a href="mailto:litu.rout@utexas.edu">Contact</a> &nbsp/&nbsp
-                <!-- <a href="data/litu_rout.pdf">CV</a> &nbsp/&nbsp -->
-                <a href="https://scholar.google.co.in/citations?hl=en&user=GYy7fWwAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a> &nbsp/&nbsp
-                <!-- <a href="https://www.researchgate.net/profile/Litu_Rout">ResearchGate</a> &nbsp/&nbsp -->
-                <!-- <a href="https://orcid.org/0000-0002-5054-5899">ORCID</a> &nbsp/&nbsp -->
-                <a href="https://dblp.org/pid/206/6445.html">DBLP</a> &nbsp/&nbsp
-                <a href="https://www.linkedin.com/in/litu-rout/">LinkedIn</a> &nbsp/&nbsp           
-                <a href="https://x.com/litu_rout_">X</a> &nbsp/&nbsp 
-                <a href="https://github.com/LituRout">GitHub</a> <!-- &nbsp/&nbsp -->
-                <!-- <a href="https://www.semanticscholar.org/author/Litu-Rout/26427844">Semantic Scholar</a> -->
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/litu_rout_web.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/litu_rout_web.jpg" class="hoverZoomLink"></a>
+
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#updates">Updates</a>
+    <a href="#publications">Research</a>
+    <a href="#service">Service</a>
+  </div>
+
+  <div class="container" id="home">
+
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
+      <tbody>
+        <tr>
+          <td style="padding:2.5%;width:63%;vertical-align:middle">
+            <p style="text-align:center">
+              <name>Litu Rout</name>
+            </p>
+            <p> I am a fourth year PhD student at <a href="https://www.utexas.edu/">The University of Texas Austin</a>,
+              advised by <a href="https://caramanis.github.io/"> Prof. Constantine Caramanis </a> and <a
+                href="https://sites.google.com/view/sanjay-shakkottai/home"> Prof. Sanjay Shakkottai</a>. My research
+              focuses on the <strong>theoretical foundations of generative models</strong> (e.g. diffusion, flows, and
+              optimal transport) and their <strong>applications in conditional sampling</strong> (e.g. inverse problems,
+              image/video editing, and personalization).</p>
+
+            <p>I am currently working as a student researcher at Google. Prior to UT Austin, I worked as a
+              Scientist/Engineer-SD at <a href="https://www.isro.gov.in/">ISRO</a>.</p>
+
+            <p>
+              I received my BTech from <a href="https://www.iist.ac.in/">IIST</a>. I was fortunate to be advised by <a
+                href="https://sites.google.com/view/ramakrishnasaigorthi/Home"> Prof. Rama Krishna Gorthi</a> and <a
+                href="https://www.iist.ac.in/avionics/deepak.mishra"> Prof. Deepak Mishra</a> during my undergraduate
+              research.
+            </p>
+
+            <p style="text-align:center" class="social-links">
+              <a href="mailto:litu.rout@utexas.edu" title="Email"><i class="fas fa-envelope"></i></a>
+              <a href="https://scholar.google.co.in/citations?hl=en&user=GYy7fWwAAAAJ" title="Google Scholar"><i
+                  class="fas fa-graduation-cap"></i></a>
+              <a href="https://dblp.org/pid/206/6445.html" title="DBLP"><i class="fas fa-book"></i></a>
+              <a href="https://www.linkedin.com/in/litu-rout/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="https://x.com/litu_rout_" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
+              <a href="https://github.com/LituRout" title="GitHub"><i class="fab fa-github"></i></a>
+            </p>
+          </td>
+          <td style="padding:2.5%;width:40%;max-width:40%">
+            <a href="images/litu_rout_web.jpg"><img class="profile-photo" alt="profile photo"
+                src="images/litu_rout_web.jpg"></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div id="updates">
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:10px;">
+        <tbody>
+          <tr>
+            <td style="width:100%;vertical-align:middle">
+              <heading>Updates</heading>
             </td>
           </tr>
-        </tbody></table>
+        </tbody>
+      </table>
 
-<!-- Updates========================================================================================== -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <heading>Updates</heading>
-              </td>
-              </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <!--========================================================================================== -->
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;">
+        <tbody>
           <td>
             <ul>
-              <li><b>Oct 2025: </b> New preprint: <a href="https://anchored-discrete-ps.github.io/">Anchored Discrete Diffusion Posterior Sampling</a> appeared on ArXiv!</li>
-              <p></p>
-              <li><b>Sep 2025: </b> Two papers: <a href="https://anchored-diffusion-llm.github.io/">Anchored Diffusion LLM</a> and <a href="">Constrained Posterior Sampling</a> accepted at NeurIPS 2025!</li>
-              <p></p>
-              <li><b>Aug 2025: </b> <a href="">Received Amazon AI PhD Fellowship!</a></li>
-              <p></p>
-              <li><b>May 2025: </b> <a href="">Started research scientist internship at Google!</a></li>
-              <p></p>
-              <li><b>May 2025: </b> New Preprint: <a href="https://arxiv.org/pdf/2505.18456">Anchored Diffusion Language Model</a> appeared on ArXiv!</li>
-              <p></p>
-              <li><b>Feb 2025: </b> <a href="https://openreview.net/pdf?id=bnINPG5A32">RB-Modulation</a> selected as an <b>Oral (1.8% acceptance ratio)</b> presentation at ICLR 2025!</li>
-              <p></p>                                         
-              <li><b>Jan 2025: </b> Three papers: <a href="https://openreview.net/pdf?id=bnINPG5A32">RB-Modulation</a>, <a href="https://openreview.net/pdf?id=Hu0FSOSEyS">RF-Inversion</a> and <a href="https://openreview.net/pdf?id=9QPH1YQCMn">InfillingScore</a> accepted at ICLR 2025!</li>
-              <p></p>                           
-              <li><b>Oct 2024:</b> Preprint: <a href="https://arxiv.org/pdf/2410.10792">Semantic Image Inversion and Editing using Rectified Stochastic Differential Equations!</a></li>
-              <p></p>
+              <li><b>Oct 2025: </b> New preprint: <a href="https://anchored-discrete-ps.github.io/">Anchored Discrete
+                  Diffusion Posterior Sampling</a> appeared on ArXiv!</li>
+              <li><b>Sep 2025: </b> Two papers: <a href="https://anchored-diffusion-llm.github.io/">Anchored Diffusion
+                  LLM</a> and <a href="">Constrained Posterior Sampling</a> accepted at NeurIPS 2025!</li>
+              <li><b>Feb 2025: </b> <a href="https://openreview.net/pdf?id=bnINPG5A32">RB-Modulation</a> selected as an
+                <b>Oral (1.8% acceptance ratio)</b> presentation at ICLR 2025!
+              </li>
+              <li><b>Jan 2025: </b> Three papers accepted at ICLR 2025!</li>
+
               <span id="dots"></span><span id="more">
-              <li><b>Oct 2024:</b> Preprint: <a href="https://arxiv.org/pdf/2410.12652">Constrained Posterior Sampling: Time Series Generation with Hard Constraints!</a></li>
-              <p></p>                    
-              <li><b>Sep 2024: </b> Hugging Face Demo: <a href="https://huggingface.co/spaces/fffiloni/RB-Modulation">RB-Modulation for Stylization and Content-Style Composition!</a></li>              
-              <p></p>
-              <li><b>May 2024: </b> Preprint: <a href="https://arxiv.org/pdf/2405.17401">RB-Modulation: Training-Free Personalization of Diffusion Models using Stochastic Optimal Control!</a></li>
-              <p></p>
-              <li><b>Feb 2024: </b> One paper <a href="https://stsl-inverse-edit.github.io/assets/stsl-inverse-edit-preprint.pdf">Beyond First-order Tweedie: Solving Inverse Problems using Latent Diffusion</a> accepted at CVPR 2024!</li>
-              <p></p>              
-	            <li><b>Nov 2023: </b> New preprint: <a href="https://stsl-inverse-edit.github.io/assets/stsl-inverse-edit-preprint.pdf">Beyond First-order Tweedie: Solving Inverse Problems using Latent Diffusion!</a></li>
-              <p></p>              
-              <li><b>Sep 2023: </b> One paper <a href="https://arxiv.org/pdf/2307.00619.pdf">Solving Linear Inverse Problems Provably using PSLD</a> accepted at NeurIPS 2023!</li>
-              <!-- <p></p>
-	      <li><b>May 2023: </b> Excited to start summer internship in <a href="https://www.qualcomm.com/research/artificial-intelligence/ai-research">Qualcomm AI Research</a>, San Diego, CA!</li> -->
-              <p></p>              
-              <li><b>Feb 2023: </b> One paper <a href="https://arxiv.org/pdf/2302.06570.pdf">Beyond Uniform Smoothness: A Stopped Analysis of Adaptive SGD</a> accepted at COLT 2023.</li>
-              <!-- <span id="dots"></span><span id="more">                                    -->
-              <p></p>            
-              <li><b>Feb 2023: </b> New preprint: <a href="https://arxiv.org/pdf/2302.01217.pdf">A Theoretical Justification for Image Inpainting using Diffusion Models</a>.</li>
-              <p></p>           
-              <li><b>Jan 2023: </b> One paper <a href="https://openreview.net/forum?id=CUOaVn6mYEj">Hierarchical Sliced Wasserstein Distance</a> accepted at ICLR 2023.</li>
-              <p></p>
-              <li><b>Sep 2022: </b> Received Cockrell School of Engineering Fellowship from UT Austin.</li>
-              <p></p>
-              <li> <b>Apr 2022:</b> Presented <a href="https://openreview.net/forum?id=5JdLZg346Lw">Generative Modeling with Optimal Transport Maps</a> at ICLR 2022.</li>
-              <p></p>
-              <li> <b>Apr 2021:</b> Published a paper on <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032063321000544"> Phobos image enhancement </a> at <a href = "https://www.sciencedirect.com/journal/planetary-and-space-science"> Planetary and Space Science Journal</a>.</li>
-              <p></p>
-              <li> <b>Feb 2021:</b> Presented a paper on <a href="https://arxiv.org/abs/2010.00521"> Turing Instability in Adversarial Learning </a> at <a href = "https://aaai.org/Conferences/AAAI-21/"> AAAI 2021 </a>.</li>
-              <p></p> 
-              <li> <b>Dec 2020:</b> Presented the <a href=""> Pseudo-Reaction-Diffusion paper </a> at the <a href = "https://neurips.cc/"> NeurIPS </a> workshop on <a href="https://ml4physicalsciences.github.io/2020/" >ML4PS</a>.</li>
-              <p></p> 
-              <li> <b>Sep 2020:</b> <b>Patent</b> granted: <a href="data/patent_certificate.pdf">A Method for Sequential Information Condensation using Fourier Basis</a>.</li>
-              <p></p>
-              <li> <b>Jun 2020:</b> Presented <b>two papers</b> at the <a href="http://cvpr2020.thecvf.com/">CVPR</a> workshop on <a href="https://www.grss-ieee.org/earthvision2020/">Large Scale Computer Vision for Remote Sensing Imagery</a>.</li>
-              <!-- <li> <b>April 2020:</b> <b>Two papers</b> got accepted at <a href="http://cvpr2020.thecvf.com/">CVPR</a> Workshop on <a href="https://www.grss-ieee.org/earthvision2020/">Large Scale Computer Vision for Remote Sensing Imagery</a>!</li> -->
-              <p></p>
-              <li> <b>Jan 2020:</b> Published <a href="https://ieeexplore.ieee.org/document/8961195">ALERT</a> in the <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=36">IEEE Transactions on Geoscience and Remote Sensing</a>, <b>impact factor: 5.85</b>.</li>
-              <p></p>
-              <li> <b>Dec 2018:</b> Received the <a href="https://www.inae.in/innovative-student-projects-award/">Innovative Student Project Award</a> for excellence in engineering and technology.
+                <li><b>Oct 2024:</b> Preprint: Semantic Image Inversion and Editing using Rectified SDEs!</li>
+                <li><b>Oct 2024:</b> Preprint: Constrained Posterior Sampling!</li>
+                <li><b>Sep 2024: </b> Hugging Face Demo: RB-Modulation released!</li>
+                <li><b>May 2024: </b> Preprint: RB-Modulation on ArXiv!</li>
+                <li><b>Feb 2024: </b> Beyond First-order Tweedie accepted at CVPR 2024!</li>
+                <li><b>Nov 2023: </b> New preprint: Beyond First-order Tweedie!</li>
+                <li><b>Sep 2023: </b> PSLD accepted at NeurIPS 2023!</li>
+                <li><b>Feb 2023: </b> Paper accepted at COLT 2023.</li>
+                <li><b>Feb 2023: </b> New preprint: Theoretical Justification for Image Inpainting.</li>
+                <li><b>Jan 2023: </b> Paper accepted at ICLR 2023.</li>
+                <li><b>Sep 2022: </b> Received Cockrell School of Engineering Fellowship.</li>
+                <li><b>Apr 2022:</b> Presented at ICLR 2022.</li>
+                <li><b>Apr 2021:</b> Published in Planetary and Space Science Journal.</li>
+                <li><b>Feb 2021:</b> Presented at AAAI 2021.</li>
+                <li><b>Dec 2020:</b> Presented at NeurIPS ML4PS workshop.</li>
+                <li><b>Sep 2020:</b> Patent granted.</li>
+                <li><b>Jun 2020:</b> Presented two papers at CVPR workshop.</li>
+                <li><b>Jan 2020:</b> Published ALERT in IEEE TGRS.</li>
+                <li><b>Dec 2018:</b> Received INAE Innovative Student Project Award.</li>
               </span>
             </ul>
-            <button onclick="myFunction()" id="myBtn">More</button>
-            <p></p>
+            <button onclick="myFunction()" id="myBtn"
+              style="background:none; border:none; color:#0056b3; cursor:pointer; font-weight:bold; padding-left:40px;">Show
+              More</button>
           </td>
         </tbody>
       </table>
+    </div>
 
-        <script>
-        function myFunction() {
-          var dots = document.getElementById("dots");
-          var moreText = document.getElementById("more");
-          var btnText = document.getElementById("myBtn");
-
-          if (dots.style.display === "none") {
-            dots.style.display = "inline";
-            btnText.innerHTML = "More"; 
-            moreText.style.display = "none";
-          } else {
-            dots.style.display = "none";
-            btnText.innerHTML = "Less"; 
-            moreText.style.display = "inline";
-          }
-        }
-        </script>
-
-
-
-<!-- Research========================================================================================== -->
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-              <p>
-                 I study <b>AI</b> at the intersection of <b> Optimization, Interactive Machine Learning, and Optimal Transport </b> including the <b>mathematical foundations of Deep Learning</b>. I primarily focus my research on <b>building</b> artificially intelligent <b>machines</b> that <b>perceive</b> the <b>world</b> from sensory data the way <b>humans</b> do. Following is a selected list of my publications. For a complete list, please see my <a href="https://scholar.google.co.in/citations?user=GYy7fWwAAAAJ&hl=en">Google Scholar</a> profile. 
-             </p>
-            </td>
-          </tr>
-        </tbody></table>
- -->
- <!-- Service========================================================================================== -->
-        <table style="width:100%; border:0px; border-spacing:0px; border-collapse:separate; margin-right:auto; margin-left:auto;">
+    <div id="publications" style="padding-top:20px;">
+      <table
+        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
         <tbody>
           <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Reviewer & Program Committee Member</heading>
-              <ul style="list-style: none; padding-left: 0;">
-                <li><b>NeurIPS</b><span style="float:right;">2022, 2023, 2024, 2025</span></li>
-                <li><b>ICLR</b><span style="float:right;">2022, 2023, 2024, 2025, 2026</span></li>
-                <li><b>ICML</b><span style="float:right;">2022, 2023, 2024, 2025</span></li>
-                <li><b>CVPR</b><span style="float:right;">2024, 2025</span></li>
-                <li><b>AAAI</b><span style="float:right;">2022, 2023, 2024, 2025, 2026</span></li>
-                <li><b>SIGGRAPH</b><span style="float:right;">2025</span></li>
-                <li><b>IEEE Transactions on AI</b><span style="float:right;">2025</span></li>
-                <li><b>Journal of Machine Learning Research</b><span style="float:right;">2024</span></li>
-                <li><b>Transactions on Machine Learning Research</b><span style="float:right;">2024</span></li>
-                <li><b>IEEE Transactions on Medical Imaging</b><span style="float:right;">2024</span></li>
-                <li><b>AISTATS</b><span style="float:right;">2023</span></li>
-                <li><b>Pattern Recognition</b><span style="float:right;">2022</span></li>
-                <li><b>NeurIPS ML4PS Workshop</b><span style="float:right;">2021</span></li>
-              </ul>
+            <td style="width:100%;vertical-align:middle">
+              <heading>Research Publications</heading>
             </td>
           </tr>
         </tbody>
       </table>
 
+      <h3 class="section-sub">Discrete Diffusion</h3>
 
-      
-        <!-- Publications==========================================================================================-->
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research Publications</heading>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <!-- 2023==========================================================================================-->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tbody>
-            <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <heading>Discrete Diffusion</heading>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <table class="pub-table"
+        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/aps.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <mark style="color:red"><b>NEW</b></mark> &nbsp 
-              <a href="https://arxiv.org/pdf/2510.02291"><papertitle>Test-Time Anchoring for Discrete Diffusion Posterior Sampling</papertitle></a>
+              <span class="new-badge">NEW</span> &nbsp;
+              <a href="https://arxiv.org/pdf/2510.02291">
+                <papertitle>Test-Time Anchoring for Discrete Diffusion Posterior Sampling</papertitle>
+              </a>
               <br>
-              <strong>Litu Rout</strong>, Andreas Lugmayr, Yasamin Jafarian, Srivatsan Varadharajan, Constantine Caramanis, Sanjay Shakkottai, and Ira Kemelmacher-Shlizerman
+              <strong>Litu Rout</strong>, Andreas Lugmayr, Yasamin Jafarian, Srivatsan Varadharajan, Constantine
+              Caramanis, Sanjay Shakkottai, and Ira Kemelmacher-Shlizerman
               <br>
               <em>ArXiv</em>, 2025
-              <br> 
-              <!-- <a href="https://openreview.net/forum?id=Hu0FSOSEyS">OpenReview</a> &nbsp -->
-              <a href="https://anchored-discrete-ps.github.io/">Project Page</a> &nbsp 
-              <a href="https://anchored-discrete-ps.github.io/data/aps.pdf">PDF</a> &nbsp
-              <a href="https://arxiv.org/pdf/2510.02291">ArXiv</a> &nbsp
+              <br>
+              <a href="https://anchored-discrete-ps.github.io/">Project Page</a> &nbsp;
+              <a href="https://anchored-discrete-ps.github.io/data/aps.pdf">PDF</a> &nbsp;
+              <a href="https://arxiv.org/pdf/2510.02291">ArXiv</a> &nbsp;
               <a href="https://github.com/LituRout/APS">Code</a>
-              <!-- <a href="https://x.com/natanielruizg/status/1846248914024124803">Tweet</a> -->
-              <p></p>
-              <p>
-                We introduce Anchored Posterior Sampling (APS) for masked diffusion foundation models, built on two key innovations: (i) quantized expectation, which provides gradient-like guidance for discrete diffusion with purely discrete embedding space, and (ii) anchored remasking, which enables adaptive decoding during inference. Our method supports a variety of linear and nonlinear image restoration tasks, as well as mask-based garment styling and reference-guided style transfer.
-              </p>
+              <p>We introduce Anchored Posterior Sampling (APS) for masked diffusion foundation models, built on two key
+                innovations: (i) quantized expectation, which provides gradient-like guidance for discrete diffusion
+                with purely discrete embedding space, and (ii) anchored remasking, which enables adaptive decoding
+                during inference. Our method supports a variety of linear and nonlinear image restoration tasks, as well
+                as mask-based garment styling and reference-guided style transfer.</p>
             </td>
           </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
+          <tr style="background-color: #ffffd0; box-shadow: 0 0 20px rgba(0,0,0,0.05);">
+            <td
+              style="padding:20px;width:25%;vertical-align:middle; border-top-left-radius: 12px; border-bottom-left-radius: 12px;">
               <img src='images/adlm.png'>
             </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <mark style="color:red"><b>NEW</b></mark> &nbsp 
-              <a href="https://anchored-diffusion-llm.github.io/data/adlm.pdf"><papertitle>Anchored Diffusion Language Model</papertitle></a>
+            <td
+              style="padding:20px;width:75%;vertical-align:middle; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
+              <span class="new-badge" style="background-color: #ff5252; color: white;">NEW</span> &nbsp;
+              <a href="https://anchored-diffusion-llm.github.io/data/adlm.pdf">
+                <papertitle>Anchored Diffusion Language Model</papertitle>
+              </a>
               <br>
               <strong>Litu Rout</strong>, Constantine Caramanis, and Sanjay Shakkottai
               <br>
               <em>NeurIPS</em>, 2025
-              <br> 
-              <!-- <a href="https://openreview.net/forum?id=Hu0FSOSEyS">OpenReview</a> &nbsp -->
-              <a href="https://anchored-diffusion-llm.github.io/">Project Page</a> &nbsp 
-              <a href="anchored-diffusion-llm.github.io/data/adlm.pdf">PDF</a> &nbsp
-              <a href="https://arxiv.org/pdf/2505.18456">ArXiv</a> &nbsp
+              <br>
+              <a href="https://anchored-diffusion-llm.github.io/">Project Page</a> &nbsp;
+              <a href="anchored-diffusion-llm.github.io/data/adlm.pdf">PDF</a> &nbsp;
+              <a href="https://arxiv.org/pdf/2505.18456">ArXiv</a> &nbsp;
               <a href="https://github.com/LituRout/ADLM">Code</a>
-              <img src="https://img.shields.io/github/stars/LituRout/ADLM?style=social" alt="GitHub stars">
-              &nbsp
-              <!-- <a href="https://x.com/natanielruizg/status/1846248914024124803">Tweet</a> -->
-              <p></p>
-              <p>Diffusion Language Models (DLMs) promise parallel generation and bidirectional context, yet they underperform autoregressive (AR) models in both likelihood modeling and generated text quality. We address this issue by introducing Anchored Diffusion Language Model (ADLM), a novel two-stage framework that first predicts distributions over important tokens via an anchor network, and then predicts the likelihoods of missing tokens conditioned on the anchored predictions.
-              </p>
+              <img class="github-badge" src="https://img.shields.io/github/stars/LituRout/ADLM?style=social"
+                alt="GitHub stars">
+              <p>Diffusion Language Models (DLMs) promise parallel generation and bidirectional context, yet they
+                underperform autoregressive (AR) models in both likelihood modeling and generated text quality. We
+                address this issue by introducing Anchored Diffusion Language Model (ADLM), a novel two-stage framework
+                that first predicts distributions over important tokens via an anchor network, and then predicts the
+                likelihoods of missing tokens conditioned on the anchored predictions.</p>
             </td>
           </tr>
-          </tbody>
-          </table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tbody>
-            <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <heading>Continuous Diffusion & Rectified Flows</heading>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        </tbody>
+      </table>
+
+      <h3 class="section-sub">Continuous Diffusion & Rectified Flows</h3>
+
+      <table class="pub-table"
+        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/cps.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <!-- <mark style="color:red"><b>NEW</b></mark> &nbsp  -->
-              <a href="https://arxiv.org/pdf/2410.12652"><papertitle>Constrained Posterior Sampling: Time Series Generation with Hard Constraints</papertitle></a>
+              <a href="https://arxiv.org/pdf/2410.12652">
+                <papertitle>Constrained Posterior Sampling: Time Series Generation with Hard Constraints</papertitle>
+              </a>
               <br>
-              Sai Shankar Narasimhan, Shubhankar Agarwal, <strong>Litu Rout</strong>, Sanjay Shakkottai, Sandeep Chinchali              
+              Sai Shankar Narasimhan, Shubhankar Agarwal, <strong>Litu Rout</strong>, Sanjay Shakkottai, Sandeep
+              Chinchali
               <br>
               <em>NeurIPS</em>, 2025
-              <br>               
-              <a href="data/cps.pdf">PDF</a> 
-              &nbsp
-              <a href="https://arxiv.org/pdf/2410.12652">ArXiv</a>              
-              <p></p>
-              <p> We present Constrained Posterior Sampling (CPS), a scalable diffusion sampling process that generates realistic time series samples that belong to a constraint set. Without any additional training, CPS can handle a large number of constraints without sacrificing sample quality. We provide a detailed theoretical analysis of the effect of modifying the traditional diffusion sampling process with CPS.</p>
-            </td>
-          </tr>         
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/rf-inversion.png'>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <!-- <mark style="color:red"><b>NEW</b></mark> &nbsp  -->
-              <a href="https://rf-inversion.github.io/data/rf-inversion.pdf"><papertitle>Semantic Image Inversion and Editing using Rectified Stochastic Differential Equations</papertitle></a>
               <br>
-              <strong>Litu Rout</strong>, Yujia Chen, Nataniel Ruiz, Constantine Caramanis, Sanjay Shakkottai, and Wen-Sheng Chu
-              <br>
-              <em>ICLR</em>, 2025
-              <br> 
-              <a href="https://openreview.net/forum?id=Hu0FSOSEyS">OpenReview</a> &nbsp
-              <a href="https://rf-inversion.github.io/">Project Page</a> &nbsp 
-              <a href="data/rf-inversion.pdf">PDF</a> &nbsp
-              <!-- <a href="https://arxiv.org/pdf/2410.10792">ArXiv</a> &nbsp -->
-              <a href="https://github.com/LituRout/RF-Inversion">Code</a> &nbsp
-              <img src="https://img.shields.io/github/stars/LituRout/RF-Inversion?style=social" alt="GitHub stars">
-              &nbsp
-              <a href="https://github.com/logtd/ComfyUI-Fluxtapoz">ComfyUI</a> &nbsp
-              <img src="https://img.shields.io/github/stars/logtd/ComfyUI-Fluxtapoz?style=social" alt="GitHub stars">
-              &nbsp
-              <a href="https://x.com/natanielruizg/status/1846248914024124803">Tweet</a>
-              <p></p>
-              <p>We present an efficient inversion method for RF models, including Flux, that requires no additional training, latent optimization, prompt tuning, or complex attention processors. We develop a new vector field for RF inversion, interpolating between two competing objectives: consistency with a possibly corrupted input image, and consistency with the “true” distribution of clean images.</p>
+              <a href="data/cps.pdf">PDF</a> &nbsp;
+              <a href="https://arxiv.org/pdf/2410.12652">ArXiv</a>
+              <p>We present Constrained Posterior Sampling (CPS), a scalable diffusion sampling process that generates
+                realistic time series samples that belong to a constraint set. Without any additional training, CPS can
+                handle a large number of constraints without sacrificing sample quality. We provide a detailed
+                theoretical analysis of the effect of modifying the traditional diffusion sampling process with CPS.</p>
             </td>
           </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/rb-modulation.png'>
+          <tr style="background-color: #ffffd0; box-shadow: 0 0 20px rgba(0,0,0,0.05);">
+            <td
+              style="padding:20px;width:25%;vertical-align:middle; border-top-left-radius: 12px; border-bottom-left-radius: 12px;">
+              <img src='images/rf-inversion.png'>
             </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <mark style="color:red"><b>Oral</b></mark> &nbsp 
-              <a href="https://rb-modulation.github.io/data/main.pdf"><papertitle>RB-Modulation: Training-Free Stylization using Reference-Based Modulation</papertitle></a>
+            <td
+              style="padding:20px;width:75%;vertical-align:middle; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
+              <span class="new-badge" style="background-color: #ff5252; color: white;">ICLR</span> &nbsp;
+              <a href="https://rf-inversion.github.io/data/rf-inversion.pdf">
+                <papertitle>Semantic Image Inversion and Editing using Rectified Stochastic Differential Equations
+                </papertitle>
+              </a>
               <br>
-              <strong>Litu Rout</strong>, Yujia Chen, Nataniel Ruiz, Abhishek Kumar, Constantine Caramanis, Sanjay Shakkottai, and Wen-Sheng Chu
+              <strong>Litu Rout</strong>, Yujia Chen, Nataniel Ruiz, Constantine Caramanis, Sanjay Shakkottai, and
+              Wen-Sheng Chu
               <br>
               <em>ICLR</em>, 2025
-              <br> 
-              <a href="https://openreview.net/forum?id=bnINPG5A32">OpenReview</a> &nbsp
-              <a href="https://rb-modulation.github.io/">Project Page</a>
-              &nbsp 
-              <a href="https://rb-modulation.github.io/data/main.pdf">PDF</a> 
-              &nbsp
-              <a href="https://arxiv.org/abs/2405.17401">ArXiv</a>
-              &nbsp
-              <!-- <a href="https://www.youtube.com/watch?v=OrIzxIzwams">Talk</a> -->
-              <!-- &nbsp -->
+              <br>
+              <a href="https://openreview.net/forum?id=Hu0FSOSEyS">OpenReview</a> &nbsp;
+              <a href="https://rf-inversion.github.io/">Project Page</a> &nbsp;
+              <a href="data/rf-inversion.pdf">PDF</a> &nbsp;
+              <a href="https://github.com/LituRout/RF-Inversion">Code</a>
+              <img class="github-badge" src="https://img.shields.io/github/stars/LituRout/RF-Inversion?style=social"
+                alt="GitHub stars">
+              &nbsp;
+              <a href="https://github.com/logtd/ComfyUI-Fluxtapoz">ComfyUI</a> &nbsp;
+              <img class="github-badge" src="https://img.shields.io/github/stars/logtd/ComfyUI-Fluxtapoz?style=social"
+                alt="GitHub stars">
+              &nbsp;
+              <a href="https://x.com/natanielruizg/status/1846248914024124803">Tweet</a>
+              <p>We present an efficient inversion method for RF models, including Flux, that requires no additional
+                training, latent optimization, prompt tuning, or complex attention processors. We develop a new vector
+                field for RF inversion, interpolating between two competing objectives: consistency with a possibly
+                corrupted input image, and consistency with the “true” distribution of clean images.</p>
+            </td>
+          </tr>
+          <tr style="background-color: #ffffd0; box-shadow: 0 0 20px rgba(0,0,0,0.05);">
+            <td
+              style="padding:20px;width:25%;vertical-align:middle; border-top-left-radius: 12px; border-bottom-left-radius: 12px;">
+              <img src='images/rb-modulation.png'>
+            </td>
+            <td
+              style="padding:20px;width:75%;vertical-align:middle; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
+              <span class="new-badge" style="background-color: #ff5252; color: white;">ICLR (Oral)</span> &nbsp;
+              <a href="https://rb-modulation.github.io/data/main.pdf">
+                <papertitle>RB-Modulation: Training-Free Stylization using Reference-Based Modulation</papertitle>
+              </a>
+              <br>
+              <strong>Litu Rout</strong>, Yujia Chen, Nataniel Ruiz, Abhishek Kumar, Constantine Caramanis, Sanjay
+              Shakkottai, and Wen-Sheng Chu
+              <br>
+              <em>ICLR</em>, 2025
+              <br>
+              <a href="https://openreview.net/forum?id=bnINPG5A32">OpenReview</a> &nbsp;
+              <a href="https://rb-modulation.github.io/">Project Page</a> &nbsp;
+              <a href="https://rb-modulation.github.io/data/main.pdf">PDF</a> &nbsp;
+              <a href="https://arxiv.org/abs/2405.17401">ArXiv</a> &nbsp;
               <a href="https://github.com/LituRout/RB-Modulation">Code</a>
-              &nbsp
-              <img src="https://img.shields.io/github/stars/google/RB-Modulation?style=social" alt="GitHub stars">
-              &nbsp
+              <img class="github-badge" src="https://img.shields.io/github/stars/google/RB-Modulation?style=social"
+                alt="GitHub stars">
+              &nbsp;
               <a href="https://huggingface.co/spaces/fffiloni/RB-Modulation">Demo</a>
-              &nbsp
+              &nbsp;
               <a href="https://x.com/fffiloni/status/1830719360656167096">Tweet</a>
-              <p></p>
-              <p>We introduce Reference-Based Modulation (RB-Modulation), a training-free plug-and-play solution for content and style personalization. By incorporating style features into the controller’s terminal cost, we modulate the drift field in diffusion models’ reverse dynamics, enabling training-free personalization. Further, we propose an Attention Feature Aggregation (AFA) module that decouples content from the reference style image. </p>
+              <p>We introduce Reference-Based Modulation (RB-Modulation), a training-free plug-and-play solution for
+                content and style personalization. By incorporating style features into the controller’s terminal cost,
+                we modulate the drift field in diffusion models’ reverse dynamics, enabling training-free
+                personalization. Further, we propose an Attention Feature Aggregation (AFA) module that decouples
+                content from the reference style image.</p>
             </td>
           </tr>
           <tr>
@@ -357,29 +469,22 @@
               <img src='images/InfillingScore.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <!-- <mark style="color:red"><b>NEW</b></mark> &nbsp  -->
-              <a href="https://openreview.net/pdf?id=9QPH1YQCMn"><papertitle>Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models</papertitle></a>
+              <a href="https://openreview.net/pdf?id=9QPH1YQCMn">
+                <papertitle>Infilling Score: A Pretraining Data Detection Algorithm for Large Language Models
+                </papertitle>
+              </a>
               <br>
-              Negin Raoof, <strong>Litu Rout</strong>, Giannis Daras, Sujay Sanghavi, Constantine Caramanis, Sanjay Shakkottai, and Alex Dimakis
+              Negin Raoof, <strong>Litu Rout</strong>, Giannis Daras, Sujay Sanghavi, Constantine Caramanis, Sanjay
+              Shakkottai, and Alex Dimakis
               <br>
               <em>ICLR</em>, 2025
-              <br> 
-              <a href="https://openreview.net/forum?id=9QPH1YQCMn">OpenReview</a> &nbsp
-              <!-- <a href="https://rb-modulation.github.io/">Project Page</a> -->
-              <!-- &nbsp  -->
-              <a href="https://openreview.net/pdf?id=9QPH1YQCMn">PDF</a> 
-              &nbsp
-              <!-- <a href="https://arxiv.org/abs/2405.17401">ArXiv</a> -->
-              <!-- &nbsp -->
-              <!-- <a href="https://www.youtube.com/watch?v=OrIzxIzwams">Talk</a> -->
-              <!-- &nbsp -->
-              <!-- <a href="https://github.com/LituRout/RB-Modulation">Code</a> -->
-              <!-- &nbsp -->
-              <!-- <a href="https://huggingface.co/spaces/fffiloni/RB-Modulation">Demo</a> -->
-              <!-- &nbsp -->
-              <!-- <a href="https://x.com/fffiloni/status/1830719360656167096">Tweet</a> -->
-              <p></p>
-              <p>We introduce Infilling Score, a new method for pre-training data detection in Large Language Models based on token-level infilling likelihoods. Infilling Score can be computed for autoregressive models without re-training using Bayes rule. A naive application of Bayes rule scales linearly with the vocabulary size. However, we propose a ratio test-statistic whose computation is invariant to vocabulary size. </p>
+              <br>
+              <a href="https://openreview.net/pdf?id=9QPH1YQCMn">PDF</a>
+              <p>We introduce Infilling Score, a new method for pre-training data detection in Large Language Models
+                based on token-level infilling likelihoods. Infilling Score can be computed for autoregressive models
+                without re-training using Bayes rule. A naive application of Bayes rule scales linearly with the
+                vocabulary size. However, we propose a ratio test-statistic whose computation is invariant to vocabulary
+                size.</p>
             </td>
           </tr>
           <tr>
@@ -387,155 +492,163 @@
               <img src='images/stsl.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <!-- <mark style="color:red"><b>NEW</b></mark> &nbsp  -->
-              <a href="https://stsl-inverse-edit.github.io/assets/stsl-inverse-edit-preprint.pdf"><papertitle>Beyond First-order Tweedie: Solving Inverse Problems using Latent Diffusion</papertitle></a>
+              <a href="https://stsl-inverse-edit.github.io/assets/stsl-inverse-edit-preprint.pdf">
+                <papertitle>Beyond First-order Tweedie: Solving Inverse Problems using Latent Diffusion</papertitle>
+              </a>
               <br>
-              <strong>Litu Rout</strong>, Yujia Chen, Abhishek Kumar, Constantine Caramanis, Sanjay Shakkottai, and Wen-Sheng Chu
+              <strong>Litu Rout</strong>, Yujia Chen, Abhishek Kumar, Constantine Caramanis, Sanjay Shakkottai, and
+              Wen-Sheng Chu
               <br>
               <em>CVPR</em>, 2024
-              <br> 
-              <!-- <a href="">OpenReview</a> &nbsp -->
-              <a href="https://stsl-inverse-edit.github.io/">Project Page</a>
-              &nbsp 
-              <a href="data/stsl_camera_ready_cvpr24.pdf">PDF</a> 
-              &nbsp
-              <a href="https://arxiv.org/abs/2312.00852">ArXiv</a>
-              &nbsp
-              <a href="https://www.youtube.com/watch?v=OrIzxIzwams">Talk</a>
-              &nbsp
+              <br>
+              <a href="https://stsl-inverse-edit.github.io/">Project Page</a> &nbsp;
+              <a href="data/stsl_camera_ready_cvpr24.pdf">PDF</a> &nbsp;
+              <a href="https://arxiv.org/abs/2312.00852">ArXiv</a> &nbsp;
               <a href="https://github.com/LituRout/stsl-inverse-edit">Code</a>
-              &nbsp
-              <img src="https://img.shields.io/github/stars/LituRout/stsl-inverse-edit?style=social" alt="GitHub stars">
-              &nbsp
-              <a href="https://x.com/litu_rout_/status/1732032178710548654">Tweet</a>
-              <p></p>
-              <p>We present an efficient second-order approximation using Tweedie's formula to mitigate the bias incurred in the widely used first-order samplers. With this method, we devise a surrogate loss function to refine the reverse process at every diffusion step to address inverse problems and perform high-fidelity text-guided image editing. </p>
+              <img class="github-badge"
+                src="https://img.shields.io/github/stars/LituRout/stsl-inverse-edit?style=social" alt="GitHub stars">
+              <p>We present an efficient second-order approximation using Tweedie's formula to mitigate the bias
+                incurred in the widely used first-order samplers. With this method, we devise a surrogate loss function
+                to refine the reverse process at every diffusion step to address inverse problems and perform
+                high-fidelity text-guided image editing.</p>
             </td>
-         </tr>
-          <tr>
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <img src='images/psld.png'>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <!-- <mark style="color:red"><b>NEW</b></mark> &nbsp  -->
-            <a href="https://arxiv.org/abs/2307.00619"><papertitle>Solving Linear Inverse Problems Provably via Posterior Sampling with Latent Diffusion Models
-            </papertitle></a>
-            <br>
-            <strong>Litu Rout</strong>, Negin Raoof, Giannis Daras, Constantine Caramanis, Alex Dimakis, and Sanjay Shakkottai
-            <br>
-            <em>NeurIPS</em>, 2023
-            <br>
-            <a href="https://openreview.net/pdf?id=XKBFdYwfRo">OpenReview</a> &nbsp
-            <a href="data/PSLD_Poster_NeurIPS23.pdf">Poster</a> &nbsp 
-            <a href="https://arxiv.org/pdf/2307.00619.pdf">ArXiv</a> &nbsp
-            <a href="https://github.com/LituRout/PSLD">Code</a> &nbsp 
-            <img src="https://img.shields.io/github/stars/LituRout/PSLD?style=social" alt="GitHub stars">
-              &nbsp
-            <a href="https://huggingface.co/spaces/PSLD/PSLD">Demo</a>&nbsp
-            <a href="https://neurips.cc/virtual/2023/poster/71366">Presentation</a>&nbsp
-            <a href="https://x.com/giannis_daras/status/1678903720317186051">Tweet</a> 
-            <p></p>
-            <p> Solving inverse problems (e.g. inpainting/deblurring) for general domain images is hard. Magic Eraser and other commercial tools use separately trained models for each task. We introduce PSLD, a method that uses Stable Diffusion to solve all linear problems without any extra training.</p>
-          </td>
+          </tr>
+          <tr style="background-color: #ffffd0; box-shadow: 0 0 20px rgba(0,0,0,0.05);">
+            <td
+              style="padding:20px;width:25%;vertical-align:middle; border-top-left-radius: 12px; border-bottom-left-radius: 12px;">
+              <img src='images/psld.png'>
+            </td>
+            <td
+              style="padding:20px;width:75%;vertical-align:middle; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
+              <span class="new-badge" style="background-color: #ff5252; color: white;">NeurIPS</span> &nbsp;
+              <a href="https://arxiv.org/abs/2307.00619">
+                <papertitle>Solving Linear Inverse Problems Provably via Posterior Sampling with Latent Diffusion Models
+                </papertitle>
+              </a>
+              <br>
+              <strong>Litu Rout</strong>, Negin Raoof, Giannis Daras, Constantine Caramanis, Alex Dimakis, and Sanjay
+              Shakkottai
+              <br>
+              <em>NeurIPS</em>, 2023
+              <br>
+              <a href="https://openreview.net/pdf?id=XKBFdYwfRo">OpenReview</a> &nbsp;
+              <a href="data/PSLD_Poster_NeurIPS23.pdf">Poster</a> &nbsp;
+              <a href="https://arxiv.org/pdf/2307.00619.pdf">ArXiv</a> &nbsp;
+              <a href="https://github.com/LituRout/PSLD">Code</a>
+              <img class="github-badge" src="https://img.shields.io/github/stars/LituRout/PSLD?style=social"
+                alt="GitHub stars">
+              &nbsp;
+              <a href="https://huggingface.co/spaces/PSLD/PSLD">Demo</a> &nbsp;
+              <a href="https://neurips.cc/virtual/2023/poster/71366">Presentation</a> &nbsp;
+              <a href="https://x.com/giannis_daras/status/1678903720317186051">Tweet</a>
+              <p>Solving inverse problems (e.g. inpainting/deblurring) for general domain images is hard. Magic Eraser
+                and other commercial tools use separately trained models for each task. We introduce PSLD, a method that
+                uses Stable Diffusion to solve all linear problems without any extra training.</p>
+            </td>
           </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/repaintplus.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <!-- <mark style="color:red"><b>NEW</b></mark> &nbsp  -->
-              <a href="https://arxiv.org/abs/2302.01217"><papertitle>A Theoretical Justification for Image Inpainting using Denoising Diffusion Probabilistic Models</papertitle></a>
+              <a href="https://arxiv.org/abs/2302.01217">
+                <papertitle>A Theoretical Justification for Image Inpainting using Denoising Diffusion Probabilistic
+                  Models</papertitle>
+              </a>
               <br>
               <strong>Litu Rout</strong>, Advait Parulekar, Constantine Caramanis, and Sanjay Shakkottai
               <br>
               <em>UT Austin Technical Report</em>, 2023
-              <br><!-- 
-              <a href="">OpenReview</a> &nbsp <a href="">PDF</a> &nbsp -->
-              <a href="https://arxiv.org/pdf/2302.01217.pdf">ArXiv</a> <!-- &nbsp <a href="">Code</a> -->
-              <p></p>
-              <p>We provide a theoretical justification for sample recovery using diffusion based image inpainting in a linear model setting. Unlike most inpainting algorithms, we prove that diffusion based inpainting generalizes well to unseen masks without retraining. Motivated by our analysis, we propose a modified RePaint algorithm we call RePaint+ that provably recovers the underlying true sample and enjoys a linear rate of convergence. </p>
-            </td>
-         </tr>
-        </tbody></table>
-
-
-        <!-- 2022==========================================================================================-->
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>Stochastic Optimization</heading>
-          </td>
-        </tr>
-      </tbody></table> -->
-        
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <img src='images/Stop_sign.png'>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-             <a href="https://arxiv.org/abs/2302.06570"><papertitle>Beyond Uniform Smoothness: A Stopped Analysis of Adaptive SGD</papertitle></a>
-            <br>
-            Matthew Faw*, <strong>Litu Rout*</strong>, Constantine Caramanis, and Sanjay Shakkottai
-            <br>
-            <em>COLT</em>, 2023 &nbsp (* Equal contribution)
-            <br><!-- 
-            <a href="">OpenReview</a> &nbsp <a href="">PDF</a> &nbsp -->
-            <a href="https://arxiv.org/pdf/2302.06570.pdf">ArXiv</a> <!-- &nbsp <a href="">Code</a> -->
-            <p></p>
-            <p> We develop a technique that allows us to prove convergence rates for (L<sub>0</sub>, L<sub>1</sub>)-smooth functions without assuming uniform bounds on the noise support. The key innovation behind our results is a carefully constructed stopping time. This is simultaneously large on average and allows us to decorrelate the adaptive stepsizes from the gradients, which is a major challenge in many analyses.</p>
-          </td>
-       </tr>
-      </tbody></table>
-
-
-        <!-- 2022==========================================================================================-->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Optimal Transport</heading>
+              <br>
+              <a href="https://arxiv.org/pdf/2302.01217.pdf">ArXiv</a>
+              <p>We provide a theoretical justification for sample recovery using diffusion based image inpainting in a
+                linear model setting. Unlike most inpainting algorithms, we prove that diffusion based inpainting
+                generalizes well to unseen masks without retraining. Motivated by our analysis, we propose a modified
+                RePaint algorithm we call RePaint+ that provably recovers the underlying true sample and enjoys a linear
+                rate of convergence.</p>
             </td>
           </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <!--==========================================================================================-->
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/otm.png'>
+              <img src='images/Stop_sign.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://openreview.net/forum?id=5JdLZg346Lw"><papertitle>Generative Modeling with Optimal Transport Maps</papertitle></a>
+              <a href="https://arxiv.org/pdf/2302.06570.pdf">
+                <papertitle>Beyond Uniform Smoothness: A Stopped Analysis of Adaptive SGD</papertitle>
+              </a>
+              <br>
+              Matthew Faw*, <strong>Litu Rout*</strong>, Constantine Caramanis, and Sanjay Shakkottai
+              <br>
+              <em>COLT</em>, 2023 (* Equal contribution)
+              <br>
+              <a href="https://arxiv.org/pdf/2302.06570.pdf">ArXiv</a>
+              <p>We develop a technique that allows us to prove convergence rates for (L0, L1)-smooth functions without
+                assuming uniform bounds on the noise support. The key innovation behind our results is a carefully
+                constructed stopping time. This is simultaneously large on average and allows us to decorrelate the
+                adaptive stepsizes from the gradients, which is a major challenge in many analyses.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="section-sub">Optimal Transport</h3>
+
+      <table class="pub-table"
+        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
+          <tr style="background-color: #ffffd0; box-shadow: 0 0 20px rgba(0,0,0,0.05);">
+            <td
+              style="padding:20px;width:25%;vertical-align:middle; border-top-left-radius: 12px; border-bottom-left-radius: 12px;">
+              <img src='images/otm.png'>
+            </td>
+            <td
+              style="padding:20px;width:75%;vertical-align:middle; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
+              <span class="new-badge" style="background-color: #ff5252; color: white;">ICLR</span> &nbsp;
+              <a href="https://openreview.net/forum?id=5JdLZg346Lw">
+                <papertitle>Generative Modeling with Optimal Transport Maps</papertitle>
+              </a>
               <br>
               <strong>Litu Rout</strong>, Alexander Korotin, and Evgeny Burnaev
               <br>
               <em>ICLR</em>, 2022
               <br>
-              <a href="https://openreview.net/forum?id=5JdLZg346Lw">OpenReview</a> 
-              &nbsp <a href="https://openreview.net/pdf?id=5JdLZg346Lw">PDF</a> 
-              &nbsp <a href="https://arxiv.org/pdf/2110.02999.pdf">ArXiv</a> 
-              &nbsp <a href="data/OTM_presentation_ICLR2022.pdf"> Slides </a> 
-              &nbsp <a href="data/OTM_poster_ICLR2022.pdf">Poster</a> 
-              &nbsp <a href="https://github.com/LituRout/OptimalTransportModeling">Code</a>              
-              &nbsp <img src="https://img.shields.io/github/stars/LituRout/OptimalTransportModeling?style=social" alt="GitHub stars">              
-              <p></p>
-              <p>While Optimal Transport (OT) cost serves as the loss for popular generative models, we demonstrate that the OT map can be used as the generative model itself. Previous analogous approaches consider OT maps as generative models only in the latent spaces due to their poor performance in the original high-dimensional ambient space. In contrast, we fit OT maps directly in the ambient space, e.g., a space of high-dimensional images. </p>
+              <a href="https://openreview.net/forum?id=5JdLZg346Lw">OpenReview</a>
+              &nbsp; <a href="https://openreview.net/pdf?id=5JdLZg346Lw">PDF</a>
+              &nbsp; <a href="https://arxiv.org/pdf/2110.02999.pdf">ArXiv</a>
+              &nbsp; <a href="data/OTM_presentation_ICLR2022.pdf">Slides</a>
+              &nbsp; <a href="data/OTM_poster_ICLR2022.pdf">Poster</a>
+              &nbsp; <a href="https://github.com/LituRout/OptimalTransportModeling">Code</a>
+              <img class="github-badge"
+                src="https://img.shields.io/github/stars/LituRout/OptimalTransportModeling?style=social"
+                alt="GitHub stars">
+              <p>While Optimal Transport (OT) cost serves as the loss for popular generative models, we demonstrate that
+                the OT map can be used as the generative model itself. Previous analogous approaches consider OT maps as
+                generative models only in the latent spaces due to their poor performance in the original
+                high-dimensional ambient space. In contrast, we fit OT maps directly in the ambient space, e.g., a space
+                of high-dimensional images.</p>
             </td>
-         </tr>
+          </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/hsw.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://openreview.net/forum?id=CUOaVn6mYEj"><papertitle>Hierarchical Sliced Wasserstein Distance</papertitle></a>
+              <a href="https://openreview.net/forum?id=CUOaVn6mYEj">
+                <papertitle>Hierarchical Sliced Wasserstein Distance</papertitle>
+              </a>
               <br>
               Khai Nguyen, Tongzheng Ren, Huy Nguyen, <strong>Litu Rout</strong>, Tan Nguyen, and Nhat Ho
               <br>
               <em>ICLR</em>, 2023
               <br>
-              <a href="https://openreview.net/forum?id=CUOaVn6mYEj">OpenReview</a> &nbsp <a href="https://openreview.net/pdf?id=CUOaVn6mYEj">PDF</a> &nbsp <a href="https://arxiv.org/pdf/2209.13570.pdf">ArXiv</a> <!-- &nbsp <a href="">Code</a> -->
-              <p></p>
-              <p>A major concern of Sliced Wasserstein (SW) distance is that it requires a large number of projections in high-dimensional settings. To address this concern, we derive projections from a small number of bottleneck projections. We introduce Hierachical Radon Transform (HRT) that recursively applies Radon Transform (RT). We design Hierarchical Sliced Wasserstein (HSW) distance to estimate the discrepancy between measures in high dimensions. </p>
+              <a href="https://openreview.net/forum?id=CUOaVn6mYEj">OpenReview</a> &nbsp; <a
+                href="https://openreview.net/pdf?id=CUOaVn6mYEj">PDF</a> &nbsp; <a
+                href="https://arxiv.org/pdf/2209.13570.pdf">ArXiv</a>
+              <p>A major concern of Sliced Wasserstein (SW) distance is that it requires a large number of projections
+                in high-dimensional settings. To address this concern, we derive projections from a small number of
+                bottleneck projections. We introduce Hierachical Radon Transform (HRT) that recursively applies Radon
+                Transform (RT). We design Hierarchical Sliced Wasserstein (HSW) distance to estimate the discrepancy
+                between measures in high dimensions.</p>
             </td>
           </tr>
           <tr>
@@ -543,275 +656,248 @@
               <img src='images/ots.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/pdf/2202.01116.pdf"><papertitle>Unpaired Image Super-Resolution with Optimal Transport Maps</papertitle></a>
+              <a href="https://arxiv.org/pdf/2202.01116.pdf">
+                <papertitle>Unpaired Image Super-Resolution with Optimal Transport Maps</papertitle>
+              </a>
               <br>
               Milena Gazdieva*, <strong>Litu Rout*</strong>, Alexander Korotin*, Alexander Filippov, and Evgeny Burnaev
               <br>
-              <em>Preprint</em>, 2022 &nbsp (* Equal contribution)
+              <em>Preprint</em>, 2022 &nbsp; (* Equal contribution)
               <br>
-              <!-- <a href="https://openreview.net/forum?id=5JdLZg346Lw">OpenReview</a> &nbsp <a href="data/preprint1_2021.pdf">PDF</a> &nbsp --> <a href="https://arxiv.org/pdf/2202.01116.pdf">ArXiv</a> <!-- &nbsp <a href="">Code</a> -->
-              <p></p>
-              <p>First, we prove that GANs with content or identity losses learn optimal transport (OT) maps between source and target measures in super-resolution tasks. Second, we empirically demonstrate that these learned OT maps are biased and provide an OT solver to recover an unbiased OT map. It provides nearly state-of-the-art performance on the unpaired AIM19 benchmark without having to use content or identity losses.</p>
+              <a href="https://arxiv.org/pdf/2202.01116.pdf">ArXiv</a>
+              <p>First, we prove that GANs with content or identity losses learn optimal transport (OT) maps between
+                source and target measures in super-resolution tasks. Second, we empirically demonstrate that these
+                learned OT maps are biased and provide an OT solver to recover an unbiased OT map. It provides nearly
+                state-of-the-art performance on the unpaired AIM19 benchmark without having to use content or identity
+                losses.</p>
             </td>
-         </tr>
-        </tbody></table>
-         <!--==========================================================================================-->
+          </tr>
+        </tbody>
+      </table>
 
-         <!-- 2021==========================================================================================-->
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <h3 class="section-sub">Generative Adversarial Networks</h3>
+
+      <table class="pub-table"
+        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
+          <tr style="background-color: #ffffd0; box-shadow: 0 0 20px rgba(0,0,0,0.05);">
+            <td
+              style="padding:20px;width:25%;vertical-align:middle; border-top-left-radius: 12px; border-bottom-left-radius: 12px;">
+              <img src='images/gray_scott.png'>
+            </td>
+            <td
+              style="padding:20px;width:75%;vertical-align:middle; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
+              <span class="new-badge" style="background-color: #ff5252; color: white;">AAAI</span> &nbsp;
+              <a href="https://ojs.aaai.org/index.php/AAAI/article/view/17137">
+                <papertitle>Why Adversarial Interaction Creates Non-Homogeneous Patterns: A Pseudo-Reaction-Diffusion
+                  Model for Turing Instability</papertitle>
+              </a>
+              <br>
+              <strong>Litu Rout</strong>
+              <br>
+              <em> AAAI </em> (<b>21% acceptance</b>), 2021
+              <br>
+              <a href="data/aaai21_preprint.pdf">PDF</a> &nbsp;
+              <a href="https://arxiv.org/abs/2010.00521">ArXiv</a> &nbsp;
+              <a href="data/aaai21_slides.pdf">Slides</a> &nbsp;
+              <a href="data/aaai21_poster.pdf">Poster</a> &nbsp;
+              <a href="data/aaai21_teaser.mp4">Teaser</a> &nbsp;
+              <a
+                href="https://slideslive.com/38947721/why-adversarial-interaction-creates-nonhomogeneous-patterns-a-pseudoreactiondiffusion-model-for-turing-instability">Presentation</a>
+              <p>In this paper, we intend to demystify an interesting phenomenon: <em>adversarial interaction in GANs
+                  creates non-homogeneous equilibrium by inducing Turing instability in a Pseudo-Reaction-Diffusion
+                  (PRD) model</em>. This is in contrast to supervised learning where the identical model achieves
+                homogeneous equilibrium.</p>
+            </td>
+          </tr>
           <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>Neural Network Learning Theory &amp Pattern Recognition</heading>
-          </td>
-        </tr>
-      </tbody></table> -->
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Generative Adversarial Networks</heading>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src='images/fmnist_ker.png'>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://ml4physicalsciences.github.io/2020/">
+                <papertitle>Towards A Pseudo-Reaction-Diffusion Model for Turing Instability in Adversarial Learning
+                </papertitle>
+              </a>
+              <br>
+              <strong>Litu Rout</strong>
+              <br>
+              <em> NeurIPS ML4PS Workshop</em>, 2020
+              <br>
+              <a href="https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_1.pdf">PDF</a> &nbsp; <a
+                href="https://arxiv.org/abs/2010.00521">ArXiv</a>
+              <p>In this study, we observe that a system in which a generator and a discriminator adversarially interact
+                with each other exhibits Turing-like patterns in the hidden layer and top layer of the generator.</p>
             </td>
           </tr>
-        </tbody></table>
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <tr>
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <img src='images/gray_scott.png'>
-          </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <!-- <mark style="color:red"><b>NEW</b></mark> &nbsp --> <a href="https://ojs.aaai.org/index.php/AAAI/article/view/17137"><papertitle>Why Adversarial Interaction Creates Non-Homogeneous Patterns: A Pseudo-Reaction-Diffusion Model for Turing Instability</papertitle></a>
-                    <br>
-                    <strong>Litu Rout</strong>
-                    <br>
-                    <em> AAAI </em> (<b>acceptance rate: 21%</b>), 2021 (Extended Version) 
-                    <br>
-                    <a href="data/aaai21_preprint.pdf">PDF</a> &nbsp <a href="https://arxiv.org/abs/2010.00521">ArXiv</a> &nbsp <a href="data/aaai21_slides.pdf">Slides</a> &nbsp <a href="data/aaai21_poster.pdf">Poster</a> &nbsp <a href="data/aaai21_teaser.mp4"> Teaser </a> &nbsp <a href="https://slideslive.com/38947721/why-adversarial-interaction-creates-nonhomogeneous-patterns-a-pseudoreactiondiffusion-model-for-turing-instability">Presentation</a>
-                    <p></p>
-                    <p>In this paper, we intend to demystify an interesting phenomenon: <em>adversarial interaction in GANs creates non-homogeneous equilibrium by inducing Turing instability in a Pseudo-Reaction-Diffusion (PRD) model</em>. This is in contrast to supervised learning where the identical model achieves homogeneous equilibrium.</p>
-                </td>
-        </tr>
-      <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src='images/fmnist_ker.png'>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://ml4physicalsciences.github.io/2020/"><papertitle>Towards A Pseudo-Reaction-Diffusion Model for Turing Instability in Adversarial Learning</papertitle></a>
-        <br>
-        <strong>Litu Rout</strong>
-        <br>
-        <em> NeurIPS ML4PS Workshop</em>, 2020 (Short Version)
-        <br>
-        <a href="https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_1.pdf">PDF</a> &nbsp <a href="https://ml4physicalsciences.github.io/2020/files/NeurIPS_ML4PS_2020_1_poster.pdf">Poster</a> &nbsp <a href="https://arxiv.org/abs/2010.00521">ArXiv</a>
-        <p></p>
-        <p>In this study, we observe that a system in which a generator and a discriminator adversarially interact with each other exhibits Turing-like patterns in the hidden layer and top layer of the generator.
-        </p>
-      </td>
-      </tr>
-      <tr>
-        <td style="padding:20px;width:25%;vertical-align:middle">
-          <img src='images/mnist_nta.png'>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:middle">
-          <a href="https://aisecure-workshop.github.io/amlcvpr2021/"><papertitle>Understanding the Role of Adversarial Regularization in Supervised Learning</papertitle></a>
-          <br>
-          <strong>Litu Rout</strong>
-          <br>
-          <em>CVPR Adversarial ML Workshop</em>, 2021
-          <br>
-          <a href="data/cvpr2021_aml_cv.pdf">PDF</a>
-          <p></p>
-          <p>Despite numerous attempts sought to provide empirical evidence of adversarial regularization outperforming sole supervision, the theoretical understanding of such phenomena remains elusive. In this study, we aim to resolve whether adversarial regularization indeed performs better than sole supervision at a fundamental level.</p>
-        </td>
-        </tr>
-    </tbody></table>
-    
-
-           
-         <!-- 2021==========================================================================================-->
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Generative Adversarial Networks</heading>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src='images/mnist_nta.png'>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://aisecure-workshop.github.io/amlcvpr2021/">
+                <papertitle>Understanding the Role of Adversarial Regularization in Supervised Learning</papertitle>
+              </a>
+              <br>
+              <strong>Litu Rout</strong>
+              <br>
+              <em>CVPR Adversarial ML Workshop</em>, 2021
+              <br>
+              <a href="data/cvpr2021_aml_cv.pdf">PDF</a>
+              <p>Despite numerous attempts sought to provide empirical evidence of adversarial regularization
+                outperforming sole supervision, the theoretical understanding of such phenomena remains elusive. In this
+                study, we aim to resolve whether adversarial regularization indeed performs better than sole supervision
+                at a fundamental level.</p>
             </td>
           </tr>
-        </tbody></table>
- -->
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <!--==========================================================================================-->
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/alert.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
               <a href="https://ieeexplore.ieee.org/document/8961195">
-                <papertitle>ALERT: Adversarial Learning with Expert Regularization using Tikhonov Operator for Missing Band Reconstruction</papertitle>
+                <papertitle>ALERT: Adversarial Learning with Expert Regularization using Tikhonov Operator for Missing
+                  Band Reconstruction</papertitle>
               </a>
               <br>
               <strong>Litu Rout</strong>
               <br>
               <em>TGRS</em> (<b>impact factor: 5.85</b>), 2020
               <br>
-              <a href="https://ieeexplore.ieee.org/document/8961195">PDF</a> &nbsp <a href="data/alert.pdf">Preprint</a>
-              <p></p>
-              <p>In this article, we devise a method, which we call ALERT, to tackle missing band reconstruction. The proposed method reconstructs missing band with the sole supervision of spectral and spatial priors.</p>
+              <a href="https://ieeexplore.ieee.org/document/8961195">PDF</a> &nbsp; <a
+                href="data/alert.pdf">Preprint</a>
+              <p>In this article, we devise a method, which we call ALERT, to tackle missing band reconstruction. The
+                proposed method reconstructs missing band with the sole supervision of spectral and spatial priors.</p>
             </td>
           </tr>
-         <!--==========================================================================================-->
-	     		  
-	    <!-- </tbody></table> -->
-
-		<!-- 2020==========================================================================================-->
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>2020</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody> -->
-		<!--==========================================================================================-->
-		
-        
-        <!--==========================================================================================-->
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/s2a.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="http://openaccess.thecvf.com/content_CVPRW_2020/html/w11/Rout_S2A_Wasserstein_GAN_With_Spatio-Spectral_Laplacian_Attention_for_Multi-Spectral_Band_CVPRW_2020_paper.html">
-                <papertitle>S2A: Wasserstein GAN with Spatio-Spectral Laplacian Attention for Multi-Spectral Band Synthesis</papertitle>
+              <a
+                href="http://openaccess.thecvf.com/content_CVPRW_2020/html/w11/Rout_S2A_Wasserstein_GAN_With_Spatio-Spectral_Laplacian_Attention_for_Multi-Spectral_Band_CVPRW_2020_paper.html">
+                <papertitle>S2A: Wasserstein GAN with Spatio-Spectral Laplacian Attention for Multi-Spectral Band
+                  Synthesis</papertitle>
               </a>
               <br>
               <strong>Litu Rout</strong>, Indranil Misra, S Manthira Moorthi, and Debajyoti Dhar
               <br>
-              <em>CVPR Earth Vision Workshop, Oral Talk</em> (<b>acceptance rate: 26%</b>), 2020
+              <em>CVPR Earth Vision Workshop, Oral Talk</em>, 2020
               <br>
-              <a href="http://openaccess.thecvf.com/content_CVPRW_2020/papers/w11/Rout_S2A_Wasserstein_GAN_With_Spatio-Spectral_Laplacian_Attention_for_Multi-Spectral_Band_CVPRW_2020_paper.pdf">PDF</a> &nbsp <a href="https://arxiv.org/abs/2004.03867">ArXiv</a> &nbsp <a href="data/309-talk.pdf">Slides</a>&nbsp <a href="https://www.grss-ieee.org/earthvision2020/july_stuff/webpage/talks/309.html">Presentation</a> <!-- &nbsp <a href=""> Code </a> -->
-              <p></p>
-              <p>This paper seeks to address synthesis of high resolution multi-spectral satellite imagery using adversarial learning. Guided by the discovery of attention mechanism, we regulate the process of band synthesis through spatio-spectral Laplacian attention.</p>
+              <a
+                href="http://openaccess.thecvf.com/content_CVPRW_2020/papers/w11/Rout_S2A_Wasserstein_GAN_With_Spatio-Spectral_Laplacian_Attention_for_Multi-Spectral_Band_CVPRW_2020_paper.pdf">PDF</a>
+              &nbsp; <a href="https://arxiv.org/abs/2004.03867">ArXiv</a>
+              <p>This paper seeks to address synthesis of high resolution multi-spectral satellite imagery using
+                adversarial learning. Guided by the discovery of attention mechanism, we regulate the process of band
+                synthesis through spatio-spectral Laplacian attention.</p>
             </td>
           </tr>
-        </tbody></table>
+        </tbody>
+      </table>
 
-          <!-- 2021==========================================================================================-->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>Satellite Image Processing</heading>
-          </td>
-        </tr>
-      </tbody></table>
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <!--==========================================================================================-->
+      <h3 class="section-sub">Satellite Image Processing</h3>
+
+      <table class="pub-table"
+        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/spoa.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="http://openaccess.thecvf.com/content_CVPRW_2020/html/w11/Rout_Monte-Carlo_Siamese_Policy_on_Actor_for_Satellite_Image_Super_Resolution_CVPRW_2020_paper.html">
+              <a
+                href="http://openaccess.thecvf.com/content_CVPRW_2020/html/w11/Rout_Monte-Carlo_Siamese_Policy_on_Actor_for_Satellite_Image_Super_Resolution_CVPRW_2020_paper.html">
                 <papertitle>Monte-Carlo Siamese Policy on Actor for Satellite Image Super Resolution</papertitle>
               </a>
               <br>
               <strong>Litu Rout</strong>, Saumyaa Shah, S Manthira Moorthi, and Debajyoti Dhar
               <br>
-              <em>CVPR Earth Vision Workshop, Oral Talk</em> (<b>acceptance rate: 26%</b>), 2020
+              <em>CVPR Earth Vision Workshop, Oral Talk</em>, 2020
               <br>
-              <a href="http://openaccess.thecvf.com/content_CVPRW_2020/papers/w11/Rout_Monte-Carlo_Siamese_Policy_on_Actor_for_Satellite_Image_Super_Resolution_CVPRW_2020_paper.pdf">PDF</a> &nbsp <a href="https://arxiv.org/abs/2004.03879">ArXiv</a> <!-- &nbsp <a href="https://github.com/LituRout/MC-SPOA">Code</a> --> &nbsp <a href="data/324-talk.pdf">Slides</a> &nbsp <a href="https://www.grss-ieee.org/earthvision2020/july_stuff/webpage/talks/324.html">Presentation</a>
-              <p></p>
-              <p>In this study, we propose to parameterize action variables by matrices, and train our policy network using Monte-Carlo sampling. We study the implications of parametric action space in a model-free environment from theoretical and empirical perspective.</p>
+              <a
+                href="http://openaccess.thecvf.com/content_CVPRW_2020/papers/w11/Rout_Monte-Carlo_Siamese_Policy_on_Actor_for_Satellite_Image_Super_Resolution_CVPRW_2020_paper.pdf">PDF</a>
+              &nbsp; <a href="https://arxiv.org/abs/2004.03879">ArXiv</a>
+              <p>In this study, we propose to parameterize action variables by matrices, and train our policy network
+                using Monte-Carlo sampling. We study the implications of parametric action space in a model-free
+                environment from theoretical and empirical perspective.</p>
             </td>
           </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/phobos.png'>
             </td>
-                <td style="padding:20px;width:75%;vertical-align:middle">
-                  <!-- <mark style="color:red"><b>NEW</b></mark> &nbsp --> <a href="https://www.sciencedirect.com/journal/planetary-and-space-science"><papertitle>Phobos Image Enhancement using Unpaired Multi-Frame Acquisitions from Indian Mars Color Camera </papertitle></a>
-                    <br>
-                    Indranil Misra, <strong>Litu Rout</strong>, Sunita Arya, Yatharath Bhateja, S Manthira Moorthi, and Debajyoti Dhar
-                    <br>
-                    <!-- <em> Planetary and Space Science </em> (<b>impact factor: 1.782</b>), 2021   -->
-                    <em> Planetary and Space Science </em>, 2021  
-                    <br>
-                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032063321000544">PDF</a> &nbsp <a href="data/planet.pdf">Preprint</a>
-                    <p></p>
-                    <p>This paper describes the techniques developed to enhance the Phobos image from MCC multi-frame acquisitions using image rectification and topographic data. After incorporating these techniques, the final Phobos image appears more representative, spatially enhanced, and has normalized radiometry to study its surface features.</p>
-                </td>
-             </tr>
-          <!--==========================================================================================-->
-    
-
-          <!--==========================================================================================-->
-            
-            </tbody></table>
-
-
-        <!-- 2019==========================================================================================-->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Visual Object Tracking</heading>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://www.sciencedirect.com/journal/planetary-and-space-science">
+                <papertitle>Phobos Image Enhancement using Unpaired Multi-Frame Acquisitions from Indian Mars Color
+                  Camera </papertitle>
+              </a>
+              <br>
+              Indranil Misra, <strong>Litu Rout</strong>, Sunita Arya, Yatharath Bhateja, S Manthira Moorthi, and
+              Debajyoti Dhar
+              <br>
+              <em> Planetary and Space Science </em>, 2021
+              <br>
+              <a href="https://www.sciencedirect.com/science/article/abs/pii/S0032063321000544">PDF</a> &nbsp; <a
+                href="data/planet.pdf">Preprint</a>
+              <p>This paper describes the techniques developed to enhance the Phobos image from MCC multi-frame
+                acquisitions using image rectification and topographic data. After incorporating these techniques, the
+                final Phobos image appears more representative, spatially enhanced, and has normalized radiometry to
+                study its surface features.</p>
             </td>
           </tr>
-        </tbody></table>
-        
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-		<!--==========================================================================================-->
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src='images/eccv.png'>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="http://openaccess.thecvf.com/content_eccv_2018_workshops/w1/html/Kristan_The_sixth_Visual_Object_Tracking_VOT2018_challenge_results_ECCVW_2018_paper.html">
-          <papertitle>The tenth visual object tracking vot2018 challenge results</papertitle>
-        </a>
-        <br>
-        Matej Kristan, Ales Leonardis, Jiri Matas, Michael Felsberg, Roman, Pflugfelder, <strong>Litu Rout</strong> and others
-        <br>
-        <em>ECCV VOT Workshop</em>, 2022
-        <br>
-        <a href="https://link.springer.com/chapter/10.1007/978-3-031-25085-9_25">PDF</a>
-        <p></p>
-        <p>Results of over ninety trackers are presented; many are state-of-the-art trackers published at major computer vision conferences or in journals in the recent years.</p>
-      </td>
-    </tr>
-	       <tr>
-	         <td style="padding:20px;width:25%;vertical-align:middle">
-	           <img src='images/iccv.png'>
-	         </td>
-	         <td style="padding:20px;width:75%;vertical-align:middle">
-	           <a href="http://openaccess.thecvf.com/content_ICCVW_2019/html/VOT/Kristan_The_Seventh_Visual_Object_Tracking_VOT2019_Challenge_Results_ICCVW_2019_paper.html">
-	             <papertitle>The seventh visual object tracking vot2018 challenge results</papertitle>
-	           </a>
-	           <br>
-	           Matej Kristan, Ales Leonardis, Jiri Matas, Michael Felsberg, Roman, Pflugfelder, <strong>Litu Rout</strong> and others
-	           <br>
-	           <em>ICCV VOT Workshop</em>, 2019
-	           <br>
-	           <a href="http://openaccess.thecvf.com/content_ICCVW_2019/html/VOT/Kristan_The_Seventh_Visual_Object_Tracking_VOT2019_Challenge_Results_ICCVW_2019_paper.html">PDF</a>
-	           <p></p>
-	           <p>Results of 81 trackers are presented; many are state-of-the-art trackers published at major computer vision conferences or in journals in the recent years.</p>
-	         </td>
-	       </tr>
-          <!--==========================================================================================-->
-            <!-- </tbody></table> -->
+        </tbody>
+      </table>
 
+      <h3 class="section-sub">Visual Object Tracking</h3>
 
-        <!-- 2018==========================================================================================-->
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>2018</heading>
-            </td>
-          </tr>
-        </tbody></table> -->
-        
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody> -->
-		<!--==========================================================================================-->
-
+      <table class="pub-table"
+        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <video width=100% height=100% muted autoplay loop>
+              <img src='images/eccv.png'>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a
+                href="http://openaccess.thecvf.com/content_eccv_2018_workshops/w1/html/Kristan_The_sixth_Visual_Object_Tracking_VOT2018_challenge_results_ECCVW_2018_paper.html">
+                <papertitle>The tenth visual object tracking vot2018 challenge results</papertitle>
+              </a>
+              <br>
+              Matej Kristan, Ales Leonardis, Jiri Matas, Michael Felsberg, Roman, Pflugfelder, <strong>Litu
+                Rout</strong> and others
+              <br>
+              <em>ECCV VOT Workshop</em>, 2022
+              <br>
+              <a href="https://link.springer.com/chapter/10.1007/978-3-031-25085-9_25">PDF</a>
+              <p>Results of over ninety trackers are presented; many are state-of-the-art trackers published at major
+                computer vision conferences or in journals in the recent years.</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src='images/iccv.png'>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a
+                href="http://openaccess.thecvf.com/content_ICCVW_2019/html/VOT/Kristan_The_Seventh_Visual_Object_Tracking_VOT2019_Challenge_Results_ICCVW_2019_paper.html">
+                <papertitle>The seventh visual object tracking vot2018 challenge results</papertitle>
+              </a>
+              <br>
+              Matej Kristan, Ales Leonardis, Jiri Matas, Michael Felsberg, Roman, Pflugfelder, <strong>Litu
+                Rout</strong> and others
+              <br>
+              <em>ICCV VOT Workshop</em>, 2019
+              <br>
+              <a
+                href="http://openaccess.thecvf.com/content_ICCVW_2019/html/VOT/Kristan_The_Seventh_Visual_Object_Tracking_VOT2019_Challenge_Results_ICCVW_2019_paper.html">PDF</a>
+              <p>Results of 81 trackers are presented; many are state-of-the-art trackers published at major computer
+                vision conferences or in journals in the recent years.</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <video muted autoplay loop>
                 <source src="images/matrix_crop.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -825,22 +911,23 @@
               <br>
               <em>ACCV</em>, 2018
               <br>
-              <a href="https://link.springer.com/chapter/10.1007/978-3-030-20890-5_41">PDF</a> &nbsp <a href="https://arxiv.org/abs/1906.01551">ArXiv</a> &nbsp <a href="data/ACCV_conference_presentation_.pdf">Slides</a>
-              <p></p>
-              <p>Here, we propose a robust framework that offers the provision to incorporate illumination and rotation invariance in the standard Discriminative Correlation Filter (DCF) formulation. We also supervise the detection stage of DCF trackers by eliminating false positives in the convolution response map.</p>
+              <a href="https://link.springer.com/chapter/10.1007/978-3-030-20890-5_41">PDF</a> &nbsp; <a
+                href="https://arxiv.org/abs/1906.01551">ArXiv</a>
+              <p>Here, we propose a robust framework that offers the provision to incorporate illumination and rotation
+                invariance in the standard Discriminative Correlation Filter (DCF) formulation. We also supervise the
+                detection stage of DCF trackers by eliminating false positives in the convolution response map.</p>
             </td>
           </tr>
-
-          <!--==========================================================================================-->
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <video width=100% height=100% muted autoplay loop>
+              <video muted autoplay loop>
                 <source src="images/waef_crop.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="http://openaccess.thecvf.com/content_eccv_2018_workshops/w1/html/Rout_WAEF_Weighted_Aggregation_with_Enhancement_Filter_for_Visual_Object_Tracking_ECCVW_2018_paper.html">
+              <a
+                href="http://openaccess.thecvf.com/content_eccv_2018_workshops/w1/html/Rout_WAEF_Weighted_Aggregation_with_Enhancement_Filter_for_Visual_Object_Tracking_ECCVW_2018_paper.html">
                 <papertitle>WAEF: Weighted Aggregation with Enhancement Filter for Visual Object Tracking</papertitle>
               </a>
               <br>
@@ -848,35 +935,16 @@
               <br>
               <em>ECCV VOT Workshop</em>, 2018
               <br>
-              <a href="http://openaccess.thecvf.com/content_eccv_2018_workshops/w1/html/Rout_WAEF_Weighted_Aggregation_with_Enhancement_Filter_for_Visual_Object_Tracking_ECCVW_2018_paper.html">PDF</a>
-              <p></p>
-              <p>This paper discusses a novel approach to regress in temporal domain, based on weighted aggregation of distinctive visual features and feature prioritization with entropy estimation in a recursive fashion.</p>
+              <a
+                href="http://openaccess.thecvf.com/content_eccv_2018_workshops/w1/html/Rout_WAEF_Weighted_Aggregation_with_Enhancement_Filter_for_Visual_Object_Tracking_ECCVW_2018_paper.html">PDF</a>
+              <p>This paper discusses a novel approach to regress in temporal domain, based on weighted aggregation of
+                distinctive visual features and feature prioritization with entropy estimation in a recursive fashion.
+              </p>
             </td>
           </tr>
-         <!--==========================================================================================-->
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/eccv.png'>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="http://openaccess.thecvf.com/content_eccv_2018_workshops/w1/html/Kristan_The_sixth_Visual_Object_Tracking_VOT2018_challenge_results_ECCVW_2018_paper.html">
-                <papertitle>The sixth visual object tracking vot2018 challenge results</papertitle>
-              </a>
-              <br>
-              Matej Kristan, Ales Leonardis, Jiri Matas, Michael Felsberg, Roman, Pflugfelder, <strong>Litu Rout</strong> and others
-              <br>
-              <em>ECCV VOT Workshop</em>, 2018
-              <br>
-              <a href="http://openaccess.thecvf.com/content_eccv_2018_workshops/w1/html/Kristan_The_sixth_Visual_Object_Tracking_VOT2018_challenge_results_ECCVW_2018_paper.html">PDF</a>
-              <p></p>
-              <p>Results of over eighty trackers are presented; many are state-of-the-art trackers published at major computer vision conferences or in journals in the recent years.</p>
-            </td>
-          </tr>
-          <!--==========================================================================================-->
-
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <video width=100% height=100% muted autoplay loop>
+              <video muted autoplay loop>
                 <source src="images/wacv_crop.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -890,9 +958,12 @@
               <br>
               <em>WACV</em>, 2018
               <br>
-              <a href="https://ieeexplore.ieee.org/document/8354224">PDF</a> &nbsp <a href="https://arxiv.org/abs/1709.06057">ArXiv</a> &nbsp <a href="https://github.com/LituRout/SiameseFC-DSR">Code</a> &nbsp <a href='data/wacv_50.pdf'>Slides</a> &nbsp <a href="data/WACV18-poster-paper-50.pdf">Poster</a> &nbsp<a href="https://www.youtube.com/watch?v=UvnBla8fTJo">Presentation</a>
-              <p></p>
-              <p>In this paper, we study the necessity to capture various physical constraints through motion consistency which has been demonstrated to improve accuracy, robustness and more importantly rotation adaptiveness.</p>
+              <a href="https://ieeexplore.ieee.org/document/8354224">PDF</a> &nbsp; <a
+                href="https://arxiv.org/abs/1709.06057">ArXiv</a> &nbsp; <a
+                href="https://github.com/LituRout/SiameseFC-DSR">Code</a>
+              <p>In this paper, we study the necessity to capture various physical constraints through motion
+                consistency which has been demonstrated to improve accuracy, robustness and more importantly rotation
+                adaptiveness.</p>
             </td>
           </tr>
           <tr>
@@ -901,62 +972,55 @@
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
               <a href="https://link.springer.com/article/10.1007/s12046-019-1100-6">
-                <papertitle>Application of image enhancement and mixture of Gaussian approach in combustion research</papertitle>
+                <papertitle>Application of image enhancement and mixture of Gaussian approach in combustion research
+                </papertitle>
               </a>
               <br>
               <strong>Litu Rout</strong>, Rajesh Sadanandan and Deepak Mishra
               <br>
               <em>Sadhana, Indian Academy of Sciences</em>, 2019
               <br>
-              <a href="https://link.springer.com/article/10.1007/s12046-019-1100-6">PDF</a> &nbsp <a href="https://www.ias.ac.in/describe/article/sadh/044/05/0114">IAS</a>
-              <p></p>
-              <p>The developed algorithm has been implemented to yield the physically significant chemiluminescence emission from hydroxyl radicals in flames from line-of-sight integrated images. The effectiveness of this algorithm is highlighted using exemplary OH chemiluminescence images captured from a standard swirl stabilized research burner.</p>
+              <a href="https://link.springer.com/article/10.1007/s12046-019-1100-6">PDF</a>
+              <p>The developed algorithm has been implemented to yield the physically significant chemiluminescence
+                emission from hydroxyl radicals in flames from line-of-sight integrated images. The effectiveness of
+                this algorithm is highlighted using exemplary OH chemiluminescence images captured from a standard swirl
+                stabilized research burner.</p>
             </td>
           </tr>
-          
-        </tbody></table>
 
- <!-- Patents==========================================================================================-->
+        </tbody>
+      </table>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Patent</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
+      <h3 class="section-sub">Patent</h3>
+      <table class="pub-table"
+        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/patent.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="data/patent_certificate.pdf"><papertitle>A Method for Sequential Information Condensation using Fourier Basis</papertitle></a>
+              <a href="data/patent_certificate.pdf">
+                <papertitle>A Method for Sequential Information Condensation using Fourier Basis</papertitle>
+              </a>
               <br>
               <a href="https://en.wikipedia.org/wiki/Tapan_Misra">Tapan Misra</a>, <strong>Litu Rout</strong>
               <br>
               <em>SAC, ISRO</em>, 2020
               <br>
-              Patent No. 346206,  Application No. 202041004166
-              <br>
-              <p></p>
-              <p>The present embodiment proposes an efficient Fast Fourier Transform (FFT) based hyper-spectral image compression technique to store multiple acquisitions over same region of interest and thereby, improve Signal to Noise Ratio (SNR) of hyper-spectral images which usually have coarse spatial resolution.</p>
+              Patent No. 346206, Application No. 202041004166
+              <p>The present embodiment proposes an efficient Fast Fourier Transform (FFT) based hyper-spectral image
+                compression technique to store multiple acquisitions over same region of interest and thereby, improve
+                Signal to Noise Ratio (SNR) of hyper-spectral images which usually have coarse spatial resolution.</p>
             </td>
           </tr>
-        </tbody></table>
+        </tbody>
+      </table>
 
-<!-- Chapters==========================================================================================-->
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Chapters</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
+      <h3 class="section-sub">Chapters</h3>
+      <table class="pub-table"
+        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/accv_book.png'>
@@ -969,12 +1033,12 @@
               <strong>Litu Rout</strong>, Priya Mariam Raju, Deepak Mishra, and Rama Krishna Gorthi
               <br>
               <em>Computer Vision – ACCV</em>, 2018
-              <br>
-              <p></p>
-              <p>In this chapter, we propose a robust framework that offers the provision to incorporate illumination and rotation invariance in the standard Discriminative Correlation Filter (DCF) formulation. We also supervise the detection stage of DCF trackers by eliminating false positives in the convolution response map.</p>
+              <p>In this chapter, we propose a robust framework that offers the provision to incorporate illumination
+                and rotation invariance in the standard Discriminative Correlation Filter (DCF) formulation. We also
+                supervise the detection stage of DCF trackers by eliminating false positives in the convolution response
+                map.</p>
             </td>
           </tr>
-
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src='images/eccv_vot_book.png'>
@@ -987,106 +1051,61 @@
               <strong>Litu Rout</strong>, Deepak Mishra and Rama Krishna Gorthi
               <br>
               <em>Computer Vision – ECCV Workshops</em>, 2018
-              <br>
-              <p></p>
-              <p> This chapter discusses a novel approach to regress in the temporal domain, based on weighted aggregation of distinctive visual features and feature prioritization with entropy estimation in a recursive fashion.</p>
+              <p>This chapter discusses a novel approach to regress in the temporal domain, based on weighted
+                aggregation of distinctive visual features and feature prioritization with entropy estimation in a
+                recursive fashion.</p>
             </td>
           </tr>
+        </tbody>
+      </table>
 
-        </tbody></table>
-
-<!-- Preprints==========================================================================================-->
-
-       <!--  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Preprints</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-
-        
-         <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/otm.png'>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href=""><papertitle>Generative Modeling with Optimal Transport Maps</papertitle></a>
-              <br>
-              <strong>Litu Rout</strong>, Alexander Korotin, and Evgeny Burnaev
-              <br>
-              <a href="data/preprint1_2021.pdf">PDF</a> &nbsp <a href="https://arxiv.org/abs/2010.00522">ArXiv</a>
-              <p></p>
-              <p>While Optimal Transport (OT) cost serves as the loss for popular generative models, we demonstrate that the OT map can be used as the generative model itself. Previous analogous approaches consider OT maps as generative models only in the latent spaces due to their poor performance in the original high-dimensional ambient space. In contrast, we apply OT maps directly in the ambient space, e.g., a space of high-dimensional images. </p>
-            </td>
-         </tr>
-        </tbody></table> -->
-
-
-
-<!-- Invited Talk========================================================================================== -->
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <heading>Tutorials</heading>
-              </td>
-              </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody> -->
-      <!--========================================================================================== -->
-       <!--    <td>
-            <ul>
-              <li> <b>June 2021:</b> <a href="https://ojs.aaai.org/index.php/AAAI/article/view/17137">Why Adversarial Interaction Creates Non-Homogeneous Patterns: A Pseudo-Reaction-Diffusion Model for Turing Instability</a>, Knowledge Sharing Series on Artificial Intelligence: Theory and Practice, SAC, ISRO, India.
-                <br>
-                  <a href="data/KSS_Lecture1_02062021.pdf">[Lecture 1]</a> &nbsp <a href="data/KSS_Lecture2_09062021.pdf">[Lecture 2]</a> &nbsp <a href="data/KSS_Lecture3_16062021.pdf">[Lecture 3]</a> &nbsp <a href="data/Learning_a_Linear_Function_Approximator.html">[Demo Code 1]</a> &nbsp <a href="data/Learning_One_Layer_Neural_Network_Function_Approximator.html">[Demo Code 2]</a> &nbsp <a href="data/Learning_Two_Layer_Neural_Network_Function_Approximator.html">[Demo Code 3]</a> &nbsp <a href="data/Learning_Three_Layer_Convolutional_Neural_Network_Function_Approximator.html">[Demo Code 4]</a></li>
-              <p></p>
-              <li> <b>August 2020:</b> <b>Deep Learning: Real World Applications and Implementation Details</b>, Human Resource Development Division (HRDD), VSSC, ISRO, India.
-                <br>
-                  <a href="data/vssc_talk_aug_2020_lr.pdf">[Slides]</a> &nbsp <a href="data/Learning_a_Linear_Function_Approximator.html">[Demo Code 1]</a> &nbsp <a href="data/Learning_One_Layer_Neural_Network_Function_Approximator.html">[Demo Code 2]</a> &nbsp <a href="data/Learning_Two_Layer_Neural_Network_Function_Approximator.html">[Demo Code 3]</a> &nbsp <a href="data/Learning_Three_Layer_Convolutional_Neural_Network_Function_Approximator.html">[Demo Code 4]</a></li>
-              <p></p>
-              <li> <b>April 2020:</b> <a href="http://openaccess.thecvf.com/content_CVPRW_2020/html/w11/Rout_S2A_Wasserstein_GAN_With_Spatio-Spectral_Laplacian_Attention_for_Multi-Spectral_Band_CVPRW_2020_paper.html">S2A: Wasserstein GAN with Spatio-Spectral Laplacian Attention for Multi-Spectral Band Synthesis</a>, Earth, Ocean, Atmosphere, Planetary Sciences and Applications Area (EPSA), SAC, ISRO, India.
-                <br>
-                 <a href="data/309-talk.pdf">[Slides]</a></li>
-              <p></p>
-              <li> <b>April 2020:</b> <a href="http://openaccess.thecvf.com/content_CVPRW_2020/html/w11/Rout_Monte-Carlo_Siamese_Policy_on_Actor_for_Satellite_Image_Super_Resolution_CVPRW_2020_paper.html"> Monte-Carlo Siamese Policy on Actor for Satellite Image Super Resolution</a>, Earth, Ocean, Atmosphere, Planetary Sciences and Applications Area (EPSA), SAC, ISRO, India.
-                <br>
-                 <a href="data/324-talk.pdf">[Slides]</a></li>
-              <p></p>
-              <li> <b>March 2020:</b> <b>Global and Local Residual Learning for Spatio-Spectral Synthesis of SWIR Band using Multi-Sensor Concurrent Datasets</b>, National Remote Sensing Agencies, SAC, ISRO, India. </li>
-              <p></p>
-              <li> <b>July 2018:</b> <b>Understanding Artificial Neural Networks to Deep Learning</b>, Mohandas College of Engineering and Technology <a href="https://mcetonline.com/">(MCET)</a>, Thiruvananthapuram, Kerala, India.</li>
-            </ul>
-            <p></p> -->
-            <!--==========================================================================================-->
-			<!-- Page visitors -->
-			<!--==========================================================================================-->
-			<!-- map widget -->
-			       <!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=12kD2ArDBbodu3fRjVPsyL6j_66fWZ0yr4SIFZMXDgA'></script> -->
-			<!-- flag widget -->
-				<!-- <a href="https://info.flagcounter.com/Kaa5"><img src="https://s04.flagcounter.com/count2/Kaa5/bg_FFFFFF/txt_000000/border_CCCCCC/columns_4/maxflags_20/viewers_3/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a> -->
-			        
-        <!--   </td>
-        </tbody></table> -->
-
-        
-    	
-<!--==========================================================================================-->
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    </div>
+    <div id="service" style="margin-top:40px; margin-bottom:60px;">
+      <h3 class="section-sub">Reviewer & Program Committee Member</h3>
+      <table style="width:100%; border:0px; border-spacing:0px; border-collapse:separate;">
+        <tbody>
           <tr>
-            <td style="padding:20px;width:45%;vertical-align:middle">
-            </td>
-            <td style="padding:20px;width:55%;vertical-align:middle">
-              <!-- <div> Thanks to <a href="https://jonbarron.info/">Jon Barron</a> for the template.</div> -->
-              <a href="https://jonbarron.info/">Website Template</a>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+                <li><b>NeurIPS</b><span style="float:right;">2022, 2023, 2024, 2025</span></li>
+                <li><b>ICLR</b><span style="float:right;">2022, 2023, 2024, 2025, 2026</span></li>
+                <li><b>ICML</b><span style="float:right;">2022, 2023, 2024, 2025</span></li>
+                <li><b>CVPR</b><span style="float:right;">2024, 2025</span></li>
+                <li><b>AAAI</b><span style="float:right;">2022, 2023, 2024, 2025, 2026</span></li>
+                <li><b>SIGGRAPH</b><span style="float:right;">2025</span></li>
+                <li><b>IEEE Transactions on AI</b><span style="float:right;">2025</span></li>
+                <li><b>Journal of Machine Learning Research</b><span style="float:right;">2024</span></li>
+                <li><b>IEEE Transactions on Medical Imaging</b><span style="float:right;">2024</span></li>
+              </ul>
             </td>
           </tr>
-        </tbody></table>
-      </td>
-    </tr>
-  </table>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2025 Litu Rout. Template adapted from <a href="https://github.com/jonbarron/website">Website.</a></p>
+    </div>
+
+  </div>
+  <script>
+    function myFunction() {
+      var dots = document.getElementById("dots");
+      var moreText = document.getElementById("more");
+      var btnText = document.getElementById("myBtn");
+
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Show More";
+        moreText.style.display = "none";
+      } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Show Less";
+        moreText.style.display = "inline";
+      }
+    }
+  </script>
+
 </body>
 
 </html>

@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Lato:wght@300;400;700&amp;display=swap"
     rel="stylesheet">
 
   <style>
@@ -27,7 +27,8 @@
     body {
       font-family: 'Inter', 'Lato', Verdana, Helvetica, sans-serif;
       padding-top: 65px;
-      background-color: #f8fafc;
+      background:
+        linear-gradient(180deg, #f8fafc 0%, #ffffff 38%, #f7faf9 100%);
       color: #1e293b;
       margin: 0;
       line-height: 1.7;
@@ -55,6 +56,11 @@
       text-decoration: none;
     }
 
+    ::selection {
+      background: #bfdbfe;
+      color: #0f172a;
+    }
+
     /* === NAVBAR === */
     .navbar {
       background-color: rgba(255, 255, 255, 0.88);
@@ -67,7 +73,7 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.07);
       display: flex;
       justify-content: center;
-      box-shadow: 0 1px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 1px 20px rgba(15, 23, 42, 0.06);
     }
 
     .navbar a {
@@ -89,40 +95,88 @@
       text-decoration: none;
     }
 
+    .navbar a.active {
+      color: #0f172a;
+    }
+
     /* === LAYOUT === */
     .container {
       width: 100%;
-      max-width: 900px;
+      max-width: 980px;
       margin: 0 auto;
       padding: 30px 20px;
+      box-sizing: border-box;
+    }
+
+    .page-section {
+      display: none;
+    }
+
+    .page-section.active {
+      display: block;
+      animation: sectionFade 0.18s ease-out;
+    }
+
+    @keyframes sectionFade {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* === PROFILE SECTION === */
     #home>table {
-      background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 50%, #f0fdf4 100%);
-      border-radius: 20px;
-      box-shadow: 0 2px 20px rgba(37, 99, 235, 0.07);
-      border: 1px solid #dbeafe;
-      margin-bottom: 48px !important;
+      background:
+        linear-gradient(135deg, rgba(239, 246, 255, 0.95) 0%, rgba(255, 255, 255, 0.96) 52%, rgba(240, 253, 244, 0.9) 100%);
+      border-radius: 24px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.24);
+      margin-bottom: 52px !important;
+      overflow: hidden;
+    }
+
+    #home>table td:first-child {
+      padding: 42px 34px !important;
+    }
+
+    #home>table td:last-child {
+      padding: 34px !important;
     }
 
     /* === TYPOGRAPHY === */
     heading {
-      font-size: 1.35rem;
-      font-weight: 700;
+      font-size: 1.45rem;
+      font-weight: 800;
       color: #0f172a;
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       padding-bottom: 12px;
-      border-bottom: 2.5px solid #2563eb;
-      letter-spacing: -0.01em;
+      border-bottom: 1px solid #e2e8f0;
+      letter-spacing: -0.02em;
+      position: relative;
+    }
+
+    heading::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 68px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #2563eb, #14b8a6);
     }
 
     h3.section-sub {
-      margin: 48px 0 20px 0;
+      margin: 52px 0 18px 0;
       font-size: 0.72rem;
       font-weight: 700;
-      color: #94a3b8;
+      color: #64748b;
       text-transform: uppercase;
       letter-spacing: 0.14em;
       border-bottom: 1px solid #e2e8f0;
@@ -130,10 +184,10 @@
     }
 
     name {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 800;
       display: block;
-      margin-bottom: 0.35em;
+      margin-bottom: 0.22em;
       color: #0f172a;
       letter-spacing: -0.03em;
       line-height: 1.1;
@@ -141,9 +195,20 @@
 
     papertitle {
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.02rem;
       color: #0f172a;
       line-height: 1.4;
+    }
+
+    strong {
+      font-size: inherit;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    em {
+      color: #475569;
+      font-style: italic;
     }
 
     /* === PHOTO === */
@@ -151,8 +216,8 @@
       width: 100%;
       max-width: 100%;
       border-radius: 50%;
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.14);
-      border: 3px solid #fff;
+      box-shadow: 0 16px 45px rgba(15, 23, 42, 0.16);
+      border: 5px solid #fff;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -165,7 +230,7 @@
     .social-links a {
       font-size: 21px;
       margin: 0 10px;
-      color: #94a3b8;
+      color: #64748b;
       transition: all 0.2s;
       display: inline-block;
     }
@@ -177,20 +242,71 @@
     }
 
     /* === PUBLICATION TABLE === */
+    .pub-table {
+      border-collapse: separate !important;
+      border-spacing: 0 16px !important;
+    }
+
     .pub-table tr {
-      transition: background-color 0.2s;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      transition: transform 0.2s ease;
     }
 
     .pub-table tr:hover td {
-      background-color: #eff6ff;
+      background-color: #f8fbff;
+      border-color: #bfdbfe;
+    }
+
+    .pub-table tr:hover {
+      transform: translateY(-2px);
+    }
+
+    .pub-table td {
+      background: rgba(255, 255, 255, 0.94);
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.045);
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .pub-table td:first-child {
+      border-left: 1px solid #e2e8f0;
+      border-radius: 16px 0 0 16px;
+    }
+
+    .pub-table td:last-child {
+      border-right: 1px solid #e2e8f0;
+      border-radius: 0 16px 16px 0;
+    }
+
+    .pub-table tr[style*="#ffffd0"] td {
+      background: #ffffd0;
+      border-color: #fde68a;
+      box-shadow: 0 14px 36px rgba(202, 138, 4, 0.11);
+    }
+
+    .pub-table tr[style*="#ffffd0"]:hover td {
+      background: #fff7b8;
+      border-color: #facc15;
+    }
+
+    .pub-table td p {
+      color: #475569;
+      line-height: 1.66;
+      margin: 12px 0 0 0;
+    }
+
+    .pub-table td a {
+      font-weight: 600;
     }
 
     .pub-table td img,
     .pub-table td video {
       width: 100%;
       height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.1);
       object-fit: cover;
       display: block;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -220,14 +336,70 @@
     }
 
     .new-badge {
-      color: #dc2626;
+      display: inline-flex;
+      align-items: center;
+      color: #ffffff;
       font-weight: 700;
       font-size: 0.7rem;
-      background: #fef2f2;
-      padding: 2px 8px;
-      border-radius: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      background: linear-gradient(135deg, #2563eb, #14b8a6);
+      padding: 3px 9px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+      line-height: 1.25;
+      max-width: 100%;
+      white-space: normal;
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.18);
+      vertical-align: baseline;
+    }
+
+    #updates table:last-of-type {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      box-shadow: 0 16px 44px rgba(15, 23, 42, 0.055);
+    }
+
+    #updates ul {
+      list-style: none;
+      margin: 0;
+      padding: 6px 4px 6px 0;
+    }
+
+    #updates li {
+      position: relative;
+      min-height: 28px;
+      padding: 10px 0 10px 132px;
+      border-bottom: 1px solid #edf2f7;
+      color: #334155;
+    }
+
+    #updates li:last-child {
+      border-bottom: 0;
+    }
+
+    #updates li>b:first-of-type {
+      position: absolute;
+      left: 0;
+      top: 12px;
+      background: #eef2ff;
+      color: #3730a3;
+      border: 1px solid #c7d2fe;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      line-height: 1;
+      padding: 6px 10px;
+      white-space: nowrap;
+    }
+
+    #updates li>b:not(:first-of-type) {
+      position: static;
+      background: transparent;
+      border: 0;
+      color: #0f172a;
+      font-size: inherit;
+      line-height: inherit;
+      padding: 0;
+      white-space: normal;
     }
 
     /* Show More button */
@@ -251,6 +423,40 @@
       color: white !important;
     }
 
+    #service table {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 16px;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.045);
+      overflow: hidden;
+    }
+
+    #service table.section-heading-table {
+      background: transparent;
+      border: 0 !important;
+      border-radius: 0;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    #service ul {
+      margin: 0;
+    }
+
+    #service li {
+      padding: 7px 0;
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    #service li:last-child {
+      border-bottom: 0;
+    }
+
+    #service li span {
+      color: #475569;
+      font-weight: 600;
+    }
+
     /* Scroll offset for fixed navbar */
     #updates,
     #publications,
@@ -267,6 +473,83 @@
       border-top: 1px solid #e2e8f0;
       margin-top: 40px;
     }
+
+    @media (max-width: 720px) {
+      body {
+        padding-top: 54px;
+      }
+
+      .navbar {
+        justify-content: space-around;
+      }
+
+      .navbar a {
+        padding: 15px 8px;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+      }
+
+      .container {
+        padding: 22px 14px;
+      }
+
+      #home>table,
+      #home>table tbody,
+      #home>table tr,
+      #home>table td {
+        display: block;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+      }
+
+      #home>table td:first-child {
+        padding: 30px 24px 14px !important;
+      }
+
+      #home>table td:last-child {
+        padding: 10px 68px 30px !important;
+      }
+
+      name {
+        font-size: 2.4rem;
+      }
+
+      #updates li {
+        padding: 42px 0 10px 0;
+      }
+
+      #updates li>b:first-of-type {
+        top: 10px;
+      }
+
+      .pub-table,
+      .pub-table tbody,
+      .pub-table tr,
+      .pub-table td {
+        display: block;
+        width: 100% !important;
+        box-sizing: border-box;
+      }
+
+      .pub-table td:first-child {
+        border-radius: 16px 16px 0 0;
+        border-right: 1px solid #e2e8f0;
+        border-bottom: 0;
+      }
+
+      .pub-table td:last-child {
+        border-radius: 0 0 16px 16px;
+        border-left: 1px solid #e2e8f0;
+        border-top: 0;
+      }
+
+      .pub-table td img,
+      .pub-table td video {
+        max-height: 230px;
+        object-fit: contain;
+      }
+    }
   </style>
 </head>
 
@@ -279,53 +562,56 @@
     <a href="#service">Service</a>
   </div>
 
-  <div class="container" id="home">
+  <div class="container">
 
-    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
-      <tbody>
-        <tr>
-          <td style="padding:2.5%;width:63%;vertical-align:middle">
-            <p style="text-align:center">
-              <name>Litu Rout</name>
-            </p>
-            <p> I am a Senior Research Scientist at <a href="https://deepmind.google/">Google DeepMind</a>, currently
-              working on pretraining (e.g., model architectures, algorithms, efficiency, scaling) and multi-modal (e.g.,
-              vision, language, code) research for <a href="https://gemini.google.com/app"> Gemini.</a> I received my
-              PhD from
-              <a href="https://www.utexas.edu/">The University of Texas Austin</a>, advised by <a
-                href="https://caramanis.github.io/"> Prof. Constantine Caramanis </a> and <a
-                href="https://sites.google.com/view/sanjay-shakkottai/home"> Prof. Sanjay Shakkottai</a>. My research
-              broadly focuses on the <strong>theoretical foundations of generative modeling</strong> (e.g.
-              diffusion/flow models, auto-regressive models, and optimal transport) and their <strong>applications in
-                conditional sampling</strong> (e.g. inverse problems, structured reasoning, personalization).
-            </p>
+    <div id="home" class="page-section">
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
+        <tbody>
+          <tr>
+            <td style="padding:2.5%;width:63%;vertical-align:middle">
+              <p style="text-align:center">
+                <name>Litu Rout</name>
+              </p>
+              <p> I am a Senior Research Scientist at <a href="https://deepmind.google/">Google DeepMind</a>, currently
+                working on pretraining (e.g., model architectures, algorithms, efficiency, scaling) and multi-modal
+                (e.g.,
+                vision, language, code) research for <a href="https://gemini.google.com/app"> Gemini.</a> I received my
+                PhD from
+                <a href="https://www.utexas.edu/">The University of Texas Austin</a>, advised by <a
+                  href="https://caramanis.github.io/"> Prof. Constantine Caramanis </a> and <a
+                  href="https://sites.google.com/view/sanjay-shakkottai/home"> Prof. Sanjay Shakkottai</a>. My research
+                broadly focuses on the <strong>theoretical foundations of generative modeling</strong> (e.g.
+                diffusion/flow models, auto-regressive models, and optimal transport) and their <strong>applications in
+                  conditional sampling</strong> (e.g. inverse problems, structured reasoning, personalization).
+              </p>
 
-            <p>Prior to UT Austin, I worked as a Scientist/Engineer-SD at <a href="https://www.isro.gov.in/">ISRO</a>.
-              I received my Bachelor of Technology from <a href="https://www.iist.ac.in/">IIST</a>.
-              <!-- I was fortunate to be advised by <a href="https://sites.google.com/view/ramakrishnasaigorthi/Home"> Prof.
+              <p>Prior to UT Austin, I worked as a Scientist/Engineer-SD at <a href="https://www.isro.gov.in/">ISRO</a>.
+                I received my Bachelor of Technology from <a href="https://www.iist.ac.in/">IIST</a>.
+                <!-- I was fortunate to be advised by <a href="https://sites.google.com/view/ramakrishnasaigorthi/Home"> Prof.
                 Rama Krishna Gorthi</a> and <a href="https://www.iist.ac.in/avionics/deepak.mishra"> Prof. Deepak
                 Mishra</a> during my undergraduate research. -->
-            </p>
+              </p>
 
-            <p style="text-align:center" class="social-links">
-              <a href="mailto:litu.rout@utexas.edu" title="Email"><i class="fas fa-envelope"></i></a>
-              <a href="https://scholar.google.co.in/citations?hl=en&user=GYy7fWwAAAAJ&view_op=list_works&sortby=pubdate"
-                title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-              <a href="https://dblp.org/pid/206/6445.html" title="DBLP"><i class="fas fa-book"></i></a>
-              <a href="https://www.linkedin.com/in/litu-rout/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="https://x.com/litu_rout_" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
-              <a href="https://github.com/LituRout" title="GitHub"><i class="fab fa-github"></i></a>
-            </p>
-          </td>
-          <td style="padding:2.5%;width:40%;max-width:40%">
-            <a href="images/litu_rout_web.jpg"><img class="profile-photo" alt="profile photo"
-                src="images/litu_rout_web.jpg"></a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              <p style="text-align:center" class="social-links">
+                <a href="mailto:litu.rout@utexas.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://scholar.google.co.in/citations?hl=en&amp;user=GYy7fWwAAAAJ&amp;view_op=list_works&amp;sortby=pubdate"
+                  title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://dblp.org/pid/206/6445.html" title="DBLP"><i class="fas fa-book"></i></a>
+                <a href="https://www.linkedin.com/in/litu-rout/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/litu_rout_" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/LituRout" title="GitHub"><i class="fab fa-github"></i></a>
+              </p>
+            </td>
+            <td style="padding:2.5%;width:40%;max-width:40%">
+              <a href="images/litu_rout_web.jpg"><img class="profile-photo" alt="profile photo"
+                  src="images/litu_rout_web.jpg"></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <div id="updates">
+    <div id="updates" class="page-section">
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:10px;">
         <tbody>
           <tr>
@@ -342,7 +628,7 @@
             <ul>
               <li><b>May 2026: </b> Served as an Area Chair for ICML 2026 and serving as an Area Chair for NeurIPS 2026!
               </li>
-              <li><b>Apr 2026: Anchored Discrete Diffusion Posterior Sampling (</b> <a
+              <li><b>Apr 2026: </b> Anchored Discrete Diffusion Posterior Sampling (<a
                   href="https://anchored-discrete-ps.github.io/">APS</a>) accepted at ICML 2026!
               </li>
               <li><b>Feb 2026: </b> New preprints: <a href="https://arxiv.org/pdf/2602.17688">Anchored Code
@@ -385,7 +671,7 @@
       </table>
     </div>
 
-    <div id="publications" style="padding-top:20px;">
+    <div id="publications" class="page-section" style="padding-top:20px;">
       <table
         style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
         <tbody>
@@ -397,7 +683,7 @@
         </tbody>
       </table>
 
-      <h3 class="section-sub">Discrete Diffusion & Large Language Models</h3>
+      <h3 class="section-sub">Discrete Diffusion &amp; Large Language Models</h3>
 
       <table class="pub-table"
         style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
@@ -407,7 +693,7 @@
               <img src='images/aps.png'>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <span class="new-badge" style="background-color: #ff5252; color: white;">ICML</span> &nbsp;
+              <span class="new-badge">ICML</span> &nbsp;
               <a href="https://arxiv.org/pdf/2510.02291">
                 <papertitle>Test-Time Anchoring for Discrete Diffusion Posterior Sampling</papertitle>
               </a>
@@ -485,7 +771,7 @@
             </td>
             <td
               style="padding:20px;width:75%;vertical-align:middle; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
-              <span class="new-badge" style="background-color: #ff5252; color: white;">NeurIPS</span> &nbsp;
+              <span class="new-badge">NeurIPS</span> &nbsp;
               <a href="https://anchored-diffusion-llm.github.io/data/adlm.pdf">
                 <papertitle>Anchored Diffusion Language Model</papertitle>
               </a>
@@ -510,7 +796,7 @@
         </tbody>
       </table>
 
-      <h3 class="section-sub">Continuous Diffusion & Rectified Flows</h3>
+      <h3 class="section-sub">Continuous Diffusion &amp; Rectified Flows</h3>
 
       <table class="pub-table"
         style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
@@ -566,7 +852,7 @@
             </td>
             <td
               style="padding:20px;width:75%;vertical-align:middle; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
-              <span class="new-badge" style="background-color: #ff5252; color: white;">ICLR</span> &nbsp;
+              <span class="new-badge">ICLR</span> &nbsp;
               <a href="https://rf-inversion.github.io/data/rf-inversion.pdf">
                 <papertitle>Semantic Image Inversion and Editing using Rectified Stochastic Differential Equations
                 </papertitle>
@@ -602,7 +888,7 @@
             </td>
             <td
               style="padding:20px;width:75%;vertical-align:middle; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
-              <span class="new-badge" style="background-color: #ff5252; color: white;">ICLR (Oral)</span> &nbsp;
+              <span class="new-badge">ICLR (Oral)</span> &nbsp;
               <a href="https://rb-modulation.github.io/data/main.pdf">
                 <papertitle>RB-Modulation: Training-Free Stylization using Reference-Based Modulation</papertitle>
               </a>
@@ -686,7 +972,7 @@
             </td>
             <td
               style="padding:20px;width:75%;vertical-align:middle; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
-              <span class="new-badge" style="background-color: #ff5252; color: white;">NeurIPS</span> &nbsp;
+              <span class="new-badge">NeurIPS</span> &nbsp;
               <a href="https://arxiv.org/abs/2307.00619">
                 <papertitle>Solving Linear Inverse Problems Provably via Posterior Sampling with Latent Diffusion Models
                 </papertitle>
@@ -769,7 +1055,7 @@
             </td>
             <td
               style="padding:20px;width:75%;vertical-align:middle; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
-              <span class="new-badge" style="background-color: #ff5252; color: white;">ICLR</span> &nbsp;
+              <span class="new-badge">ICLR</span> &nbsp;
               <a href="https://openreview.net/forum?id=5JdLZg346Lw">
                 <papertitle>Generative Modeling with Optimal Transport Maps</papertitle>
               </a>
@@ -853,7 +1139,7 @@
             </td>
             <td
               style="padding:20px;width:75%;vertical-align:middle; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
-              <span class="new-badge" style="background-color: #ff5252; color: white;">AAAI</span> &nbsp;
+              <span class="new-badge">AAAI</span> &nbsp;
               <a href="https://ojs.aaai.org/index.php/AAAI/article/view/17137">
                 <papertitle>Why Adversarial Interaction Creates Non-Homogeneous Patterns: A Pseudo-Reaction-Diffusion
                   Model for Turing Instability</papertitle>
@@ -1243,7 +1529,7 @@
               </div>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://www.youtube.com/watch?v=ujIGDOmIlas&t=0s">
+              <a href="https://www.youtube.com/watch?v=ujIGDOmIlas&amp;t=0s">
                 <papertitle>Guest Lecture: Foundations and Advances in Diffusion Models</papertitle>
               </a>
               <br>
@@ -1254,7 +1540,7 @@
               (Course Instructor: <a href="https://sites.google.com/view/sanjay-shakkottai/home">Prof. Sanjay
                 Shakkottai</a>)
               <br>
-              <a href="https://www.youtube.com/watch?v=ujIGDOmIlas&t=0s">Watch Video</a>
+              <a href="https://www.youtube.com/watch?v=ujIGDOmIlas&amp;t=0s">Watch Video</a>
               <p>I delivered a guest lecture in this advanced graduate course, covering the theoretical foundations of
                 diffusion models, score-based generative modeling, and their applications in inverse problems.</p>
             </td>
@@ -1263,7 +1549,18 @@
       </table> -->
 
     </div>
-    <div id="service" style="margin-top:40px; margin-bottom:60px;">
+    <div id="service" class="page-section" style="margin-top:40px; margin-bottom:60px;">
+      <table class="section-heading-table"
+        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:10px;">
+        <tbody>
+          <tr>
+            <td style="width:100%;vertical-align:middle">
+              <heading>Service</heading>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
       <h3 class="section-sub">Area Chair</h3>
       <table style="width:100%; border:0px; border-spacing:0px; border-collapse:separate;">
         <tbody>
@@ -1309,6 +1606,62 @@
 
   </div>
   <script>
+    var sectionIds = ["home", "updates", "publications", "service"];
+
+    function setActiveSection() {
+      var hash = window.location.hash.replace("#", "");
+      var activeId = sectionIds.indexOf(hash) >= 0 ? hash : "home";
+
+      sectionIds.forEach(function (id) {
+        var section = document.getElementById(id);
+        var navLink = document.querySelector('.navbar a[href="#' + id + '"]');
+
+        if (section) {
+          section.classList.toggle("active", id === activeId);
+        }
+
+        if (navLink) {
+          navLink.classList.toggle("active", id === activeId);
+          if (id === activeId) {
+            navLink.setAttribute("aria-current", "page");
+          } else {
+            navLink.removeAttribute("aria-current");
+          }
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
+
+    document.querySelectorAll(".pub-table tr").forEach(function (row) {
+      var detailCell = row.querySelector("td:nth-child(2)");
+      if (!detailCell || detailCell.querySelector(".new-badge")) {
+        return;
+      }
+
+      var venue = detailCell.querySelector("em");
+      if (!venue) {
+        return;
+      }
+
+      var label = venue.textContent.replace(/\s+/g, " ").trim().split(",")[0].trim();
+      if (!label) {
+        return;
+      }
+
+      var badge = document.createElement("span");
+      badge.className = "new-badge";
+      badge.textContent = label;
+
+      var spacer = document.createTextNode(" \u00a0");
+      var firstChild = detailCell.firstChild;
+      detailCell.insertBefore(spacer, firstChild);
+      detailCell.insertBefore(badge, spacer);
+    });
+
+    window.addEventListener("hashchange", setActiveSection);
+    setActiveSection();
+
     function myFunction() {
       var dots = document.getElementById("dots");
       var moreText = document.getElementById("more");
@@ -1321,7 +1674,7 @@
       } else {
         dots.style.display = "none";
         btnText.innerHTML = "Show Less";
-        moreText.style.display = "inline";
+        moreText.style.display = "contents";
       }
     }
   </script>
